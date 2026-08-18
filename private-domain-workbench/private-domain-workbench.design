@@ -1,0 +1,329 @@
+{
+  "data": [
+    {
+      "id": "page-index",
+      "title": "工作台首页",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1786960673000,
+      "canvasData": {
+        "x": 0,
+        "y": 0,
+        "group": 0,
+        "layoutSnapshot": {
+          "version": 1,
+          "contentHeight": 934,
+          "viewportWidth": 1440,
+          "sourceHash": "fnv1a-aee20b11",
+          "measuredAt": 1787024020308
+        }
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/index.html",
+        "interactions": [
+          {
+            "domId": "pdw-quick-daily-opportunity",
+            "targetPageId": "page-daily-opportunity"
+          },
+          {
+            "domId": "pdw-quick-weekly-deals",
+            "targetPageId": "page-weekly-deals"
+          },
+          {
+            "domId": "pdw-quick-opportunity-assign",
+            "targetPageId": "page-opportunity-assign"
+          },
+          {
+            "domId": "pdw-quick-content-calendar",
+            "targetPageId": "page-content-calendar"
+          },
+          {
+            "domId": "pdw-quick-points",
+            "targetPageId": "page-points"
+          },
+          {
+            "domId": "pdw-quick-profile",
+            "targetPageId": "page-profile"
+          },
+          {
+            "domId": "pdw-quick-todo",
+            "targetPageId": "page-todo"
+          },
+          {
+            "domId": "pdw-quick-settings",
+            "targetPageId": "page-settings"
+          }
+        ]
+      }
+    },
+    {
+      "id": "page-daily-opportunity",
+      "title": "每日商机数据",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1786960673000,
+      "canvasData": {
+        "x": 480,
+        "y": 0,
+        "group": 0,
+        "layoutSnapshot": {
+          "version": 1,
+          "contentHeight": 1034,
+          "viewportWidth": 1440,
+          "sourceHash": "fnv1a-03a407df",
+          "measuredAt": 1787024020308
+        }
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/daily-opportunity.html",
+        "interactions": []
+      }
+    },
+    {
+      "id": "page-weekly-deals",
+      "title": "社群唤醒成单",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1786960673000,
+      "canvasData": {
+        "x": 480,
+        "y": 412,
+        "group": 0,
+        "layoutSnapshot": {
+          "version": 1,
+          "contentHeight": 1110,
+          "viewportWidth": 1440,
+          "sourceHash": "fnv1a-c6ce0a13",
+          "measuredAt": 1787024020308
+        }
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/weekly-deals.html",
+        "interactions": []
+      }
+    },
+    {
+      "id": "page-opportunity-assign",
+      "title": "商机分配",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1786960673000,
+      "canvasData": {
+        "x": 480,
+        "y": 846,
+        "group": 0,
+        "layoutSnapshot": {
+          "version": 1,
+          "contentHeight": 1448,
+          "viewportWidth": 1440,
+          "sourceHash": "fnv1a-e0d3a21e",
+          "measuredAt": 1787024020308
+        }
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/opportunity-assign.html",
+        "interactions": []
+      }
+    },
+    {
+      "id": "page-advisor-ranking",
+      "title": "顾问转化排名",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1786960673000,
+      "canvasData": {
+        "x": 0,
+        "y": 3738,
+        "group": 0,
+        "layoutSnapshot": {
+          "version": 1,
+          "contentHeight": 900,
+          "viewportWidth": 1440,
+          "sourceHash": "fnv1a-a7229882",
+          "measuredAt": 1787024020308
+        }
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/advisor-ranking.html",
+        "interactions": []
+      }
+    },
+    {
+      "id": "page-content-library",
+      "title": "社群图文素材库",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1786960673000,
+      "canvasData": {
+        "x": 960,
+        "y": 1378,
+        "group": 0,
+        "layoutSnapshot": {
+          "version": 1,
+          "contentHeight": 7812,
+          "viewportWidth": 1440,
+          "sourceHash": "fnv1a-f5d1b9c6",
+          "measuredAt": 1787024020308
+        }
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/content-library.html",
+        "interactions": []
+      }
+    },
+    {
+      "id": "page-content-calendar",
+      "title": "社群日历",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1786960673000,
+      "canvasData": {
+        "x": 480,
+        "y": 1378,
+        "group": 0,
+        "layoutSnapshot": {
+          "version": 1,
+          "contentHeight": 41032,
+          "viewportWidth": 1440,
+          "sourceHash": "fnv1a-748d8943",
+          "measuredAt": 1787024020308
+        }
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/content-calendar.html",
+        "interactions": [
+          {
+            "domId": "pdw-content-asset-link",
+            "targetPageId": "page-content-library"
+          }
+        ]
+      }
+    },
+    {
+      "id": "page-community-activity",
+      "title": "社群活动",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1786960673000,
+      "canvasData": {
+        "x": 480,
+        "y": 3738,
+        "group": 0,
+        "layoutSnapshot": {
+          "version": 1,
+          "contentHeight": 2562,
+          "viewportWidth": 1440,
+          "sourceHash": "fnv1a-e94f0844",
+          "measuredAt": 1787024020308
+        }
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/community-activity.html",
+        "interactions": []
+      }
+    },
+    {
+      "id": "page-points",
+      "title": "积分激励",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1786960673000,
+      "canvasData": {
+        "x": 480,
+        "y": 1751,
+        "group": 0,
+        "layoutSnapshot": {
+          "version": 1,
+          "contentHeight": 16416,
+          "viewportWidth": 1440,
+          "sourceHash": "fnv1a-868f8a24",
+          "measuredAt": 1787024020308
+        },
+        "deviceType": "freeSize",
+        "windowSize": {
+          "width": 1440,
+          "height": 1553
+        }
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/points.html",
+        "interactions": []
+      }
+    },
+    {
+      "id": "page-profile",
+      "title": "我的",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1786960673000,
+      "canvasData": {
+        "x": 480,
+        "y": 2314,
+        "group": 0,
+        "layoutSnapshot": {
+          "version": 1,
+          "contentHeight": 1464,
+          "viewportWidth": 1440,
+          "sourceHash": "fnv1a-15e2d42c",
+          "measuredAt": 1787024020308
+        }
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/profile.html",
+        "interactions": []
+      }
+    },
+    {
+      "id": "page-todo",
+      "title": "个人待办",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1787021129183,
+      "canvasData": {
+        "x": 480,
+        "y": 2851,
+        "group": 0,
+        "layoutSnapshot": {
+          "version": 1,
+          "contentHeight": 900,
+          "viewportWidth": 1440,
+          "sourceHash": "fnv1a-a1c64710",
+          "measuredAt": 1787024020308
+        }
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/todo.html",
+        "interactions": []
+      }
+    },
+    {
+      "id": "page-settings",
+      "title": "设置中心",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1787021693644,
+      "canvasData": {
+        "x": 480,
+        "y": 3224,
+        "group": 0,
+        "layoutSnapshot": {
+          "version": 1,
+          "contentHeight": 1386,
+          "viewportWidth": 1440,
+          "sourceHash": "fnv1a-61e02526",
+          "measuredAt": 1787024020308
+        }
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/settings.html",
+        "interactions": []
+      }
+    }
+  ],
+  "config": {
+    "autoLayout": true,
+    "deviceType": "desktop",
+    "projectName": "雅文的工作台",
+    "designLibrary": null
+  }
+}

@@ -1,0 +1,1651 @@
+<!DOCTYPE html>
+<html class="light" lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>👤 我的</title>
+    <style id="theme-vars">
+/* 雅文的工作台 - 品牌设计令牌（春色系简约高级版） */
+
+:root {
+  /* 品牌主色：青草绿 */
+  --pdw-primary-50: #f0fdf4;
+  --pdw-primary-100: #dcfce7;
+  --pdw-primary-200: #bbf7d0;
+  --pdw-primary-300: #86efac;
+  --pdw-primary-400: #7cbc67;
+  --pdw-primary-500: #65a352;
+  --pdw-primary-600: #4d7f41;
+  --pdw-primary-700: #3b6333;
+  --pdw-primary-800: #2a4825;
+  --pdw-primary-900: #1a2e17;
+  --pdw-primary-950: #0d1a0c;
+
+  /* 清新青：湖水蓝 / 淡天蓝 */
+  --pdw-cyan-50: #f0f9ff;
+  --pdw-cyan-100: #e0f2fe;
+  --pdw-cyan-200: #b5e8ff;
+  --pdw-cyan-300: #a7d3d6;
+  --pdw-cyan-400: #7dd3fc;
+  --pdw-cyan-500: #38bdf8;
+  --pdw-cyan-600: #0ea5e9;
+  --pdw-cyan-700: #0284c7;
+
+  /* 激励金/杏色 */
+  --pdw-amber-50: #fffbeb;
+  --pdw-amber-100: #fef3c7;
+  --pdw-amber-400: #fbbf24;
+  --pdw-amber-500: #f59e0b;
+  --pdw-amber-600: #d97706;
+
+  /* 中性色 */
+  --pdw-slate-50: #f8fafc;
+  --pdw-slate-100: #f1f5f9;
+  --pdw-slate-200: #e2e8f0;
+  --pdw-slate-300: #cbd5e1;
+  --pdw-slate-400: #94a3b8;
+  --pdw-slate-500: #64748b;
+  --pdw-slate-600: #475569;
+  --pdw-slate-700: #334155;
+  --pdw-slate-800: #1e293b;
+  --pdw-slate-900: #0f172a;
+  --pdw-slate-950: #020617;
+
+  /* RGB 分量，用于 rgba() 透明色 */
+  --pdw-white-rgb: 255, 255, 255;
+  --pdw-black-rgb: 0, 0, 0;
+  --pdw-slate-900-rgb: 15, 23, 42;
+  --pdw-slate-800-rgb: 30, 41, 59;
+  --pdw-slate-700-rgb: 51, 65, 85;
+  --pdw-cyan-600-rgb: 14, 165, 233;
+  --pdw-slate-950-rgb: 2, 6, 23;
+  --pdw-primary-950-rgb: 13, 26, 12;
+  --pdw-primary-900-rgb: 26, 72, 37;
+  --pdw-primary-800-rgb: 42, 72, 37;
+  --pdw-primary-700-rgb: 59, 99, 51;
+  --pdw-primary-600-rgb: 77, 127, 65;
+  --pdw-primary-500-rgb: 101, 163, 82;
+  --pdw-primary-400-rgb: 124, 188, 103;
+  --pdw-cyan-400-rgb: 125, 211, 252;
+
+  /* 奖章/排行专用色 */
+  --pdw-gold-400: #ffd700;
+  --pdw-gold-600: #ffaa00;
+  --pdw-bronze-50: #fef7f0;
+  --pdw-bronze-400: #cd7f32;
+  --pdw-bronze-600: #a05a2c;
+  --pdw-medal-gold: linear-gradient(135deg, var(--pdw-gold-400), var(--pdw-gold-600));
+  --pdw-medal-silver: linear-gradient(135deg, var(--pdw-slate-400), var(--pdw-slate-500));
+  --pdw-medal-bronze: linear-gradient(135deg, var(--pdw-bronze-400), var(--pdw-bronze-600));
+  --pdw-medal-text: #ffffff;
+  --pdw-medal-silver-bg: linear-gradient(180deg, var(--pdw-slate-100), var(--pdw-card));
+  --pdw-medal-bronze-bg: linear-gradient(180deg, var(--pdw-bronze-50), var(--pdw-card));
+  --pdw-quick-icon-bg: linear-gradient(135deg, #cde5cd 0%, #c2e2c2 50%, #b9dfb9 100%);
+
+  /* 语义状态色 */
+  --state-success: #7cbc67;
+  --state-success-bg: #e8f5e4;
+  --state-warning: #f59e0b;
+  --state-warning-bg: #fef3c7;
+  --state-error: #ef4444;
+  --state-error-bg: #fee2e2;
+  --state-info: #38bdf8;
+  --state-info-bg: #e0f2fe;
+
+  /* 语义别名 */
+  --pdw-background: linear-gradient(180deg, #e8f7ff 0%, #f0fdf4 100%);
+  --pdw-foreground: #1e293b;
+  --pdw-card: rgba(255, 255, 255, 0.82);
+  --pdw-card-foreground: #1e293b;
+  --pdw-popover: #ffffff;
+  --pdw-popover-foreground: #1e293b;
+  --pdw-primary: #7cbc67;
+  --pdw-primary-foreground: #ffffff;
+  --pdw-muted: #f1f5f9;
+  --pdw-muted-foreground: #64748b;
+  --pdw-border: rgba(148, 163, 184, 0.18);
+  --pdw-input: #e2e8f0;
+  --pdw-ring: #7cbc67;
+  --pdw-radius-small: 4px;
+  --pdw-radius-medium: 8px;
+  --pdw-radius-large: 12px;
+
+  /* 结构语义色（透明/渐变） */
+  --pdw-sidebar-bg: linear-gradient(180deg, rgba(var(--pdw-primary-950-rgb), 0.92) 0%, rgba(var(--pdw-primary-600-rgb), 0.88) 100%);
+  --pdw-sidebar-bg-dark: linear-gradient(180deg, rgba(var(--pdw-slate-950-rgb), 0.95) 0%, rgba(var(--pdw-primary-900-rgb), 0.92) 100%);
+  --pdw-topbar-bg: rgba(var(--pdw-white-rgb), 0.72);
+  --pdw-topbar-bg-dark: rgba(var(--pdw-slate-900-rgb), 0.72);
+  --pdw-glass-bg: rgba(var(--pdw-white-rgb), 0.6);
+  --pdw-glass-bg-dark: rgba(var(--pdw-slate-800-rgb), 0.6);
+  --pdw-nav-link-text: rgba(var(--pdw-white-rgb), 0.78);
+  --pdw-nav-link-hover-bg: rgba(var(--pdw-white-rgb), 0.1);
+  --pdw-nav-link-active-bg: rgba(var(--pdw-white-rgb), 0.16);
+  --pdw-brand-border: rgba(var(--pdw-white-rgb), 0.1);
+
+  /* 字体系统：圆润、轻字重 */
+  --pdw-font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --pdw-font-mono: "SF Mono", "JetBrains Mono", "Fira Code", Consolas, "PingFang SC", monospace;
+  --pdw-font-rounded: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  /* 字号系统 */
+  --pdw-text-xs: 12px;
+  --pdw-text-sm: 13px;
+  --pdw-text-base: 14px;
+  --pdw-text-md: 16px;
+  --pdw-text-lg: 18px;
+  --pdw-text-xl: 20px;
+  --pdw-text-2xl: 24px;
+  --pdw-text-3xl: 30px;
+
+  /* 阴影：更清透 */
+  --pdw-shadow-sm: 0 1px 2px 0 rgba(15, 23, 42, 0.03);
+  --pdw-shadow-md: 0 4px 12px -2px rgba(20, 83, 45, 0.05), 0 2px 6px -2px rgba(15, 23, 42, 0.03);
+  --pdw-shadow-lg: 0 12px 24px -6px rgba(20, 83, 45, 0.05), 0 4px 8px -4px rgba(15, 23, 42, 0.03);
+
+  /* 动画 */
+  --pdw-transition-fast: 160ms cubic-bezier(0.4, 0, 0.2, 1);
+  --pdw-transition-base: 240ms cubic-bezier(0.4, 0, 0.2, 1);
+  --pdw-transition-slow: 360ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 深色模式：青草绿为主的高雅暗色 */
+[data-theme="dark"] {
+  --pdw-background: linear-gradient(180deg, #0f172a 0%, #1a2e17 100%);
+  --pdw-foreground: #f1f5f9;
+  --pdw-card: rgba(30, 41, 59, 0.72);
+  --pdw-card-foreground: #f1f5f9;
+  --pdw-popover: #1e293b;
+  --pdw-popover-foreground: #f1f5f9;
+  --pdw-primary: #7cbc67;
+  --pdw-primary-foreground: #052e16;
+  --pdw-muted: #334155;
+  --pdw-muted-foreground: #94a3b8;
+  --pdw-border: rgba(148, 163, 184, 0.12);
+  --pdw-input: #334155;
+  --pdw-ring: #7cbc67;
+  --pdw-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.18);
+  --pdw-shadow-md: 0 4px 12px -2px rgba(0, 0, 0, 0.2), 0 2px 6px -2px rgba(0, 0, 0, 0.12);
+  --pdw-shadow-lg: 0 12px 24px -6px rgba(0, 0, 0, 0.25), 0 4px 8px -4px rgba(0, 0, 0, 0.15);
+}
+
+/* 字体工具类 */
+.font-sans { font-family: var(--pdw-font-sans); }
+.font-mono { font-family: var(--pdw-font-mono); }
+.font-rounded { font-family: var(--pdw-font-rounded); }
+
+/* 字号工具类 */
+.text-xs { font-size: var(--pdw-text-xs); }
+.text-sm { font-size: var(--pdw-text-sm); }
+.text-base { font-size: var(--pdw-text-base); }
+.text-md { font-size: var(--pdw-text-md); }
+.text-lg { font-size: var(--pdw-text-lg); }
+.text-xl { font-size: var(--pdw-text-xl); }
+.text-2xl { font-size: var(--pdw-text-2xl); }
+.text-3xl { font-size: var(--pdw-text-3xl); }
+
+/* 通用按钮悬停缩放 */
+.pdw-btn,
+button,
+.pdw-filter-chip,
+.pdw-nav-link,
+.pdw-card,
+.pdw-stat,
+.pdw-asset-card {
+  transition: transform var(--pdw-transition-fast), box-shadow var(--pdw-transition-fast), background-color var(--pdw-transition-fast);
+}
+
+.pdw-btn:hover,
+button:not(:disabled):hover,
+.pdw-filter-chip:hover,
+.pdw-nav-link:hover,
+.pdw-card:hover,
+.pdw-stat:hover,
+.pdw-asset-card:hover {
+  transform: translateY(-1px) scale(1.01);
+}
+
+.pdw-btn:active,
+button:not(:disabled):active,
+.pdw-filter-chip:active,
+.pdw-nav-link:active {
+  transform: translateY(0) scale(0.99);
+}
+
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.1/dist/index.global.js"></script>
+    <script src="https://unpkg.com/lucide@1.8.0/dist/umd/lucide.min.js"></script>
+    <style type="text/tailwindcss">
+  @theme inline {
+    --color-background: var(--pdw-background);
+    --color-foreground: var(--pdw-foreground);
+    --color-card: var(--pdw-card);
+    --color-card-foreground: var(--pdw-card-foreground);
+    --color-popover: var(--pdw-popover);
+    --color-popover-foreground: var(--pdw-popover-foreground);
+    --color-primary: var(--pdw-primary);
+    --color-primary-foreground: var(--pdw-primary-foreground);
+    --color-muted: var(--pdw-muted);
+    --color-muted-foreground: var(--pdw-muted-foreground);
+    --color-border: var(--pdw-border);
+    --color-input: var(--pdw-input);
+    --color-ring: var(--pdw-ring);
+    --radius-sm: var(--pdw-radius-small);
+    --radius-md: var(--pdw-radius-medium);
+    --radius-lg: var(--pdw-radius-large);
+  }
+  @layer base {
+    body { background: var(--pdw-background); color: var(--pdw-foreground); }
+    td, th { @apply break-words; word-break: break-all; word-break: auto-phrase; }
+    th { @apply whitespace-nowrap; }
+  }
+    </style>
+    <style id="semantic-token-fallback">
+      .bg-background { background-color: var(--pdw-background); }
+      .text-background { color: var(--pdw-background); }
+      .border-background { border-color: var(--pdw-background); }
+      .ring-background { --tw-ring-color: var(--pdw-background); }
+      .bg-foreground { background-color: var(--pdw-foreground); }
+      .text-foreground { color: var(--pdw-foreground); }
+      .border-foreground { border-color: var(--pdw-foreground); }
+      .ring-foreground { --tw-ring-color: var(--pdw-foreground); }
+      .bg-card { background-color: var(--pdw-card); }
+      .text-card { color: var(--pdw-card); }
+      .border-card { border-color: var(--pdw-card); }
+      .ring-card { --tw-ring-color: var(--pdw-card); }
+      .bg-card-foreground { background-color: var(--pdw-card-foreground); }
+      .text-card-foreground { color: var(--pdw-card-foreground); }
+      .border-card-foreground { border-color: var(--pdw-card-foreground); }
+      .ring-card-foreground { --tw-ring-color: var(--pdw-card-foreground); }
+      .bg-popover { background-color: var(--pdw-popover); }
+      .text-popover { color: var(--pdw-popover); }
+      .border-popover { border-color: var(--pdw-popover); }
+      .ring-popover { --tw-ring-color: var(--pdw-popover); }
+      .bg-popover-foreground { background-color: var(--pdw-popover-foreground); }
+      .text-popover-foreground { color: var(--pdw-popover-foreground); }
+      .border-popover-foreground { border-color: var(--pdw-popover-foreground); }
+      .ring-popover-foreground { --tw-ring-color: var(--pdw-popover-foreground); }
+      .bg-primary { background-color: var(--pdw-primary); }
+      .text-primary { color: var(--pdw-primary); }
+      .border-primary { border-color: var(--pdw-primary); }
+      .ring-primary { --tw-ring-color: var(--pdw-primary); }
+      .bg-primary-foreground { background-color: var(--pdw-primary-foreground); }
+      .text-primary-foreground { color: var(--pdw-primary-foreground); }
+      .border-primary-foreground { border-color: var(--pdw-primary-foreground); }
+      .ring-primary-foreground { --tw-ring-color: var(--pdw-primary-foreground); }
+      .bg-muted { background-color: var(--pdw-muted); }
+      .text-muted { color: var(--pdw-muted); }
+      .border-muted { border-color: var(--pdw-muted); }
+      .ring-muted { --tw-ring-color: var(--pdw-muted); }
+      .bg-muted-foreground { background-color: var(--pdw-muted-foreground); }
+      .text-muted-foreground { color: var(--pdw-muted-foreground); }
+      .border-muted-foreground { border-color: var(--pdw-muted-foreground); }
+      .ring-muted-foreground { --tw-ring-color: var(--pdw-muted-foreground); }
+      .bg-border { background-color: var(--pdw-border); }
+      .text-border { color: var(--pdw-border); }
+      .border-border { border-color: var(--pdw-border); }
+      .ring-border { --tw-ring-color: var(--pdw-border); }
+      .bg-input { background-color: var(--pdw-input); }
+      .text-input { color: var(--pdw-input); }
+      .border-input { border-color: var(--pdw-input); }
+      .ring-input { --tw-ring-color: var(--pdw-input); }
+      .bg-ring { background-color: var(--pdw-ring); }
+      .text-ring { color: var(--pdw-ring); }
+      .border-ring { border-color: var(--pdw-ring); }
+      .ring-ring { --tw-ring-color: var(--pdw-ring); }
+    </style>
+    <style>
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      [data-icon] {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        mask-position: center;
+        background-color: currentColor;
+      }
+    </style>
+</head>
+<body class="min-h-screen font-sans antialiased" data-active-nav="profile">
+<style id="critical-layout">
+  :root {
+    --pdw-sidebar-width: 240px;
+    --pdw-topbar-height: 72px;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+  }
+
+  body {
+    font-family: var(--pdw-font-rounded);
+    font-weight: 400;
+    color: var(--pdw-foreground);
+    background: var(--pdw-background);
+    background-attachment: fixed;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--pdw-font-rounded);
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .pdw-shell {
+    min-height: 100vh;
+  }
+
+  .pdw-sidebar {
+    position: fixed;
+    inset: 0 auto 0 0;
+    width: var(--pdw-sidebar-width);
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, rgba(var(--pdw-primary-950-rgb), 0.92) 0%, rgba(var(--pdw-primary-600-rgb), 0.88) 100%);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    color: var(--pdw-primary-100);
+    box-shadow: var(--pdw-shadow-lg);
+    z-index: 100;
+  }
+
+  [data-theme="dark"] .pdw-sidebar {
+    background: linear-gradient(180deg, rgba(var(--pdw-slate-950-rgb), 0.95) 0%, rgba(var(--pdw-primary-900-rgb), 0.92) 100%);
+  }
+
+  .pdw-brand {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: var(--pdw-topbar-height);
+    padding: 0 20px;
+    border-bottom: 1px solid var(--pdw-brand-border);
+  }
+
+  .pdw-brand__name {
+    font-size: var(--pdw-text-lg);
+    font-weight: 800;
+    color: var(--pdw-popover);
+    letter-spacing: 0.02em;
+  }
+
+  .pdw-brand__sub {
+    font-size: var(--pdw-text-xs);
+    color: var(--pdw-primary-200);
+    margin-top: 4px;
+    font-weight: 500;
+  }
+
+  .pdw-nav {
+    flex: 1 1 auto;
+    overflow-y: auto;
+    padding: 12px 0;
+  }
+
+  .pdw-nav__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .pdw-nav__item {
+    margin: 3px 10px;
+  }
+
+  .pdw-nav-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 11px 14px;
+    border-radius: var(--pdw-radius-medium);
+    color: var(--pdw-nav-link-text);
+    text-decoration: none;
+    font-size: var(--pdw-text-sm);
+    font-weight: 500;
+    transition: background-color var(--pdw-transition-fast), color var(--pdw-transition-fast), transform var(--pdw-transition-fast);
+    outline: none;
+    min-height: 44px;
+  }
+
+  .pdw-nav-link:hover,
+  .pdw-nav-link:focus-visible {
+    background: var(--pdw-nav-link-hover-bg);
+    color: var(--pdw-popover);
+    transform: translateX(2px);
+  }
+
+  .pdw-nav-link[data-active="true"] {
+    background: var(--pdw-nav-link-active-bg);
+    color: var(--pdw-popover);
+    box-shadow: inset 3px 0 0 var(--pdw-primary-300);
+  }
+
+  .pdw-nav-link__icon {
+    flex: 0 0 20px;
+    width: 20px;
+    height: 20px;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+  }
+
+  .pdw-topbar {
+    position: fixed;
+    top: 0;
+    left: var(--pdw-sidebar-width);
+    right: 0;
+    height: var(--pdw-topbar-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    background: var(--pdw-topbar-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--pdw-border);
+    z-index: 90;
+  }
+
+  [data-theme="dark"] .pdw-topbar {
+    background: var(--pdw-topbar-bg-dark);
+  }
+
+  .pdw-page-title {
+    font-size: var(--pdw-text-xl);
+    font-weight: 800;
+    color: var(--pdw-slate-800);
+  }
+
+  [data-theme="dark"] .pdw-page-title {
+    color: var(--pdw-slate-100);
+  }
+
+  .pdw-topbar-center {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex: 1 1 auto;
+    justify-content: center;
+  }
+
+  .pdw-clock-widget {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 16px;
+    background: var(--pdw-glass-bg);
+    border: 1px solid var(--pdw-border);
+    border-radius: var(--pdw-radius-large);
+    box-shadow: var(--pdw-shadow-sm);
+  }
+
+  [data-theme="dark"] .pdw-clock-widget {
+    background: var(--pdw-glass-bg-dark);
+  }
+
+  .pdw-clock-widget__time {
+    font-size: var(--pdw-text-2xl);
+    font-weight: 800;
+    color: var(--pdw-primary-700);
+    font-variant-numeric: tabular-nums;
+  }
+
+  [data-theme="dark"] .pdw-clock-widget__time {
+    color: var(--pdw-primary-300);
+  }
+
+  .pdw-clock-widget__date {
+    display: flex;
+    flex-direction: column;
+    font-size: var(--pdw-text-xs);
+    color: var(--pdw-slate-600);
+    line-height: 1.4;
+  }
+
+  [data-theme="dark"] .pdw-clock-widget__date {
+    color: var(--pdw-slate-300);
+  }
+
+  .pdw-weather-widget {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    background: var(--pdw-glass-bg);
+    border: 1px solid var(--pdw-border);
+    border-radius: var(--pdw-radius-large);
+    font-size: var(--pdw-text-sm);
+    color: var(--pdw-slate-700);
+  }
+
+  [data-theme="dark"] .pdw-weather-widget {
+    background: var(--pdw-glass-bg-dark);
+    color: var(--pdw-slate-200);
+  }
+
+  .pdw-weather-widget__icon {
+    width: 22px;
+    height: 22px;
+    stroke: var(--pdw-amber-500);
+    fill: none;
+    stroke-width: 2;
+  }
+
+  .pdw-userbar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .pdw-avatar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--pdw-primary-400), var(--pdw-cyan-400));
+    color: var(--pdw-popover);
+    font-size: var(--pdw-text-xs);
+    font-weight: 700;
+  }
+
+  .pdw-userbar__name {
+    font-size: var(--pdw-text-sm);
+    font-weight: 500;
+    color: var(--pdw-slate-700);
+  }
+
+  [data-theme="dark"] .pdw-userbar__name {
+    color: var(--pdw-slate-200);
+  }
+
+  .pdw-btn--icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: var(--pdw-radius-medium);
+    background: var(--pdw-glass-bg);
+    color: var(--pdw-slate-600);
+    cursor: pointer;
+    transition: background-color var(--pdw-transition-fast), color var(--pdw-transition-fast), transform var(--pdw-transition-fast);
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  [data-theme="dark"] .pdw-btn--icon {
+    background: var(--pdw-glass-bg-dark);
+    color: var(--pdw-slate-300);
+  }
+
+  .pdw-btn--icon:hover,
+  .pdw-btn--icon:focus-visible {
+    background: var(--pdw-primary-100);
+    color: var(--pdw-primary-700);
+    transform: scale(1.08);
+  }
+
+  [data-theme="dark"] .pdw-btn--icon:hover,
+  [data-theme="dark"] .pdw-btn--icon:focus-visible {
+    background: rgba(var(--pdw-primary-900-rgb), 0.6);
+    color: var(--pdw-primary-300);
+  }
+
+  .pdw-main {
+    margin-left: var(--pdw-sidebar-width);
+    padding-top: var(--pdw-topbar-height);
+    min-height: 100vh;
+  }
+
+  .pdw-main__inner {
+    padding: 24px;
+    min-height: calc(100vh - var(--pdw-topbar-height));
+  }
+
+  .pdw-menu-toggle {
+    display: none;
+  }
+
+  @media (max-width: 1023px) {
+    :root {
+      --pdw-topbar-height: 64px;
+    }
+
+    .pdw-menu-toggle {
+      display: inline-flex;
+      margin-right: 12px;
+    }
+
+    .pdw-sidebar {
+      transform: translateX(-100%);
+      transition: transform var(--pdw-transition-base);
+    }
+
+    .pdw-sidebar.is-open {
+      transform: translateX(0);
+    }
+
+    .pdw-topbar {
+      left: 0;
+      padding: 0 16px;
+    }
+
+    .pdw-topbar-center {
+      display: none;
+    }
+
+    .pdw-main {
+      margin-left: 0;
+    }
+
+    .pdw-main__inner {
+      padding: 16px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .pdw-page-title {
+      font-size: var(--pdw-text-md);
+    }
+
+    .pdw-userbar__name {
+      display: none;
+    }
+  }
+</style>
+
+<main class="pdw-main" id="pdw-main" data-editor-id="editor-node-msy9p8v8-2">
+  <div class="pdw-main__inner">
+    <div class="pdw-profile" data-font-size="medium">
+      <!-- 个人资料头部 -->
+      <section class="pdw-profile__card" data-dom-id="pdw-profile-header">
+        <div class="pdw-profile-header">
+          <span class="pdw-profile-header__avatar" aria-hidden="true">运营</span>
+          <div class="pdw-profile-header__body">
+            <h1 class="pdw-profile-header__name">运营专员</h1>
+            <p class="pdw-profile-header__dept">浙江新东方文旅 - 私域运营部</p>
+            <p class="pdw-profile-header__meta">入职时间：2023-06-12 · 工号：PDW-2023-0612</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 设置 -->
+      <section class="pdw-profile__card">
+        <h2 class="pdw-profile__card-title">偏好设置</h2>
+
+        <div class="pdw-setting-row" data-dom-id="pdw-font-size-slider">
+          <div>
+            <div class="pdw-setting-row__label">字号大小</div>
+            <div class="pdw-setting-row__hint">调整页面正文显示字号</div>
+          </div>
+          <div class="pdw-font-slider" role="group" aria-label="字号大小选择">
+            <button class="pdw-font-slider__btn" type="button" data-size="small" aria-pressed="false">小</button>
+            <button class="pdw-font-slider__btn is-active" type="button" data-size="medium" aria-pressed="true">中</button>
+            <button class="pdw-font-slider__btn" type="button" data-size="large" aria-pressed="false">大</button>
+          </div>
+        </div>
+        <div class="pdw-font-preview" id="pdw-font-preview">
+          预览文本：浙江新东方文旅私域运营工作台，助力顾问高效转化每一份旅行向往。
+        </div>
+
+        <div class="pdw-setting-row" data-dom-id="pdw-theme-toggle">
+          <div>
+            <div class="pdw-setting-row__label">主题模式</div>
+            <div class="pdw-setting-row__hint">选择浅色、深色或跟随系统</div>
+          </div>
+          <div class="pdw-theme-toggle" role="group" aria-label="主题模式选择">
+            <button class="pdw-theme-toggle__btn is-active" type="button" data-theme="light" aria-pressed="true">浅色</button>
+            <button class="pdw-theme-toggle__btn" type="button" data-theme="dark" aria-pressed="false">深色</button>
+            <button class="pdw-theme-toggle__btn" type="button" data-theme="auto" aria-pressed="false">自动</button>
+          </div>
+        </div>
+
+        <div class="pdw-setting-row">
+          <div>
+            <div class="pdw-setting-row__label">通知偏好</div>
+            <div class="pdw-setting-row__hint">选择需要接收的消息类型</div>
+          </div>
+          <div class="pdw-check-list">
+            <label class="pdw-check-item">
+              <input type="checkbox" checked >
+              <span>每日商机提醒</span>
+            </label>
+            <label class="pdw-check-item">
+              <input type="checkbox" checked >
+              <span>周报生成通知</span>
+            </label>
+            <label class="pdw-check-item">
+              <input type="checkbox" >
+              <span>社群活跃预警</span>
+            </label>
+            <label class="pdw-check-item">
+              <input type="checkbox" checked >
+              <span>积分变动通知</span>
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <!-- 报告卡片 -->
+      <div class="pdw-report-grid">
+        <section class="pdw-profile__card pdw-report-card" data-dom-id="pdw-weekly-report">
+          <div class="pdw-report-card__header">
+            <h2 class="pdw-report-card__title">本周周报</h2>
+            <span class="pdw-report-card__status">
+              <span class="pdw-report-card__status--dot" aria-hidden="true"></span>
+              已生成 2026-08-17
+            </span>
+          </div>
+          <p class="pdw-report-card__meta">汇总本周商机、成单与社群运营数据，自动生成待办建议。</p>
+          <div class="pdw-report-card__actions">
+            <button class="pdw-btn pdw-btn--primary" type="button">查看周报</button>
+            <button class="pdw-btn pdw-btn--secondary" type="button">下载 PDF</button>
+          </div>
+        </section>
+
+        <section class="pdw-profile__card pdw-report-card" data-dom-id="pdw-monthly-summary">
+          <div class="pdw-report-card__header">
+            <h2 class="pdw-report-card__title">月度工作总结</h2>
+            <div class="pdw-month-selector">
+              <select aria-label="选择月份">
+                <option>2026-08</option>
+                <option>2026-07</option>
+                <option>2026-06</option>
+              </select>
+            </div>
+          </div>
+          <div class="pdw-report-card__stats">
+            <div class="pdw-stat">
+              <span class="pdw-stat__label">新增商机</span>
+              <span class="pdw-stat__value">486</span>
+            </div>
+            <div class="pdw-stat">
+              <span class="pdw-stat__label">成单金额</span>
+              <span class="pdw-stat__value">¥92.4w</span>
+            </div>
+            <div class="pdw-stat">
+              <span class="pdw-stat__label">社群新增</span>
+              <span class="pdw-stat__value">1,205</span>
+            </div>
+          </div>
+          <div class="pdw-report-card__actions">
+            <button class="pdw-btn pdw-btn--primary" type="button">查看总结</button>
+          </div>
+        </section>
+      </div>
+
+      <!-- AI 工作优化建议 -->
+      <section class="pdw-profile__card" data-dom-id="pdw-ai-suggestions">
+        <h2 class="pdw-profile__card-title">AI 工作优化建议</h2>
+        <div class="pdw-ai-suggestions">
+          <article class="pdw-ai-suggestion">
+            <span class="pdw-ai-suggestion__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 20h9" ></path>
+                <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z" ></path>
+              </svg>
+            </span>
+            <div class="pdw-ai-suggestion__body">
+              <h3 class="pdw-ai-suggestion__title">提升成单转化率</h3>
+              <p class="pdw-ai-suggestion__desc">近 30 天成单转化率为 18%，建议对意向明确但未下单用户增加限时优惠触达，目标提升至 22%。</p>
+            </div>
+          </article>
+          <article class="pdw-ai-suggestion">
+            <span class="pdw-ai-suggestion__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" ></circle>
+                <polyline points="12 6 12 12 16 14" ></polyline>
+              </svg>
+            </span>
+            <div class="pdw-ai-suggestion__body">
+              <h3 class="pdw-ai-suggestion__title">缩短平均响应时长</h3>
+              <p class="pdw-ai-suggestion__desc">当前平均响应 2.3 小时，高峰时段集中在 10:00-12:00。建议设置自动回复模板并安排错峰值班。</p>
+            </div>
+          </article>
+          <article class="pdw-ai-suggestion">
+            <span class="pdw-ai-suggestion__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" ></path>
+                <circle cx="9" cy="7" r="4" ></circle>
+                <path d="M22 21v-2a4 4 0 0 0-3-3.87" ></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" ></path>
+              </svg>
+            </span>
+            <div class="pdw-ai-suggestion__body">
+              <h3 class="pdw-ai-suggestion__title">激活社群沉默用户</h3>
+              <p class="pdw-ai-suggestion__desc">社群活跃度 72%，仍有 28% 用户近 7 天未互动。推荐发布“目的地投票 + 积分抽奖”组合活动提升回流。</p>
+            </div>
+          </article>
+          <article class="pdw-ai-suggestion">
+            <span class="pdw-ai-suggestion__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" ></path>
+              </svg>
+            </span>
+            <div class="pdw-ai-suggestion__body">
+              <h3 class="pdw-ai-suggestion__title">优化话术素材库</h3>
+              <p class="pdw-ai-suggestion__desc">根据近期高转化会话分析，建议补充“亲子研学”与“银发旅居”两类场景的 FAQ 与晒单话术。</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 退出登录 -->
+      <div class="pdw-logout">
+        <button class="pdw-logout__btn" type="button">
+          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <polyline points="16 17 21 12 16 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></polyline>
+            <line x1="21" y1="12" x2="9" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></line>
+          </svg>
+          退出登录
+        </button>
+      </div>
+    </div>
+  </div>
+</main><aside class="pdw-sidebar" id="pdw-sidebar" aria-label="主导航" style="width: 328px;">
+  <div class="pdw-brand">
+    <span class="pdw-brand__name">雅文的工作台</span>
+    <span class="pdw-brand__sub">文旅私域运营 · 清新高效</span>
+  </div>
+
+  <nav class="pdw-nav">
+    <ul class="pdw-nav__list">
+      <li class="pdw-nav__item">
+        <a class="pdw-nav-link" href="index.html" data-nav-key="index" data-active="<!-- SLOT:activeNavItem -->">
+          <svg class="pdw-nav-link__icon" viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3" y="3" width="7" height="9" rx="1" ></rect>
+            <rect x="14" y="3" width="7" height="5" rx="1" ></rect>
+            <rect x="14" y="12" width="7" height="9" rx="1" ></rect>
+            <rect x="3" y="16" width="7" height="5" rx="1" ></rect>
+          </svg>
+          <span>🏠 工作台首页</span>
+        </a>
+      </li>
+      <li class="pdw-nav__item">
+        <a class="pdw-nav-link" href="daily-opportunity.html" data-nav-key="daily-opportunity" data-active="<!-- SLOT:activeNavItem -->">
+          <svg class="pdw-nav-link__icon" viewBox="0 0 24 24" aria-hidden="true">
+            <line x1="12" y1="20" x2="12" y2="10" ></line>
+            <line x1="18" y1="20" x2="18" y2="4" ></line>
+            <line x1="6" y1="20" x2="6" y2="16" ></line>
+          </svg>
+          <span>📊 每日商机数据</span>
+        </a>
+      </li>
+      <li class="pdw-nav__item">
+        <a class="pdw-nav-link" href="weekly-deals.html" data-nav-key="weekly-deals" data-active="<!-- SLOT:activeNavItem -->">
+          <svg class="pdw-nav-link__icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M19 11l-3-3a2.828 2.828 0 0 0-4 0l-1 1a2.828 2.828 0 0 1-4 0l-1-1a2.828 2.828 0 0 0-4 0L2 11l5 5 2-2 2 2 5-5 3 3 5-5z" ></path>
+          </svg>
+          <span>💰 社群唤醒成单</span>
+        </a>
+      </li>
+      <li class="pdw-nav__item">
+        <a class="pdw-nav-link" href="opportunity-assign.html" data-nav-key="opportunity-assign" data-active="<!-- SLOT:activeNavItem -->">
+          <svg class="pdw-nav-link__icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" ></path>
+            <circle cx="9" cy="7" r="4" ></circle>
+            <line x1="19" y1="8" x2="19" y2="14" ></line>
+            <line x1="22" y1="11" x2="16" y2="11" ></line>
+          </svg>
+          <span>🎯 商机分配</span>
+        </a>
+      </li>
+      <li class="pdw-nav__item">
+        <a class="pdw-nav-link" href="advisor-ranking.html" data-nav-key="advisor-ranking" data-active="<!-- SLOT:activeNavItem -->">
+          <svg class="pdw-nav-link__icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" ></path>
+            <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" ></path>
+            <path d="M4 22h16" ></path>
+            <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" ></path>
+            <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" ></path>
+            <path d="M18 2H6v7a6 6 0 0 0 12 0V2z" ></path>
+          </svg>
+          <span>🏆 顾问转化排名</span>
+        </a>
+      </li>
+      <li class="pdw-nav__item">
+        <a class="pdw-nav-link" href="content-library.html" data-nav-key="content-library" data-active="<!-- SLOT:activeNavItem -->">
+          <svg class="pdw-nav-link__icon" viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="2" ></rect>
+            <circle cx="9" cy="9" r="2" ></circle>
+            <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" ></path>
+          </svg>
+          <span>🖼️ 社群图文素材库</span>
+        </a>
+      </li>
+      <li class="pdw-nav__item">
+        <a class="pdw-nav-link" href="content-calendar.html" data-nav-key="content-calendar" data-active="<!-- SLOT:activeNavItem -->">
+          <svg class="pdw-nav-link__icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M8 2v4" ></path>
+            <path d="M16 2v4" ></path>
+            <rect x="3" y="4" width="18" height="18" rx="2" ></rect>
+            <path d="M3 10h18" ></path>
+            <path d="M8 14h.01" ></path>
+            <path d="M12 14h.01" ></path>
+            <path d="M16 14h.01" ></path>
+            <path d="M8 18h.01" ></path>
+            <path d="M12 18h.01" ></path>
+            <path d="M16 18h.01" ></path>
+          </svg>
+          <span>📅 社群日历</span>
+        </a>
+      </li>
+      <li class="pdw-nav__item">
+        <a class="pdw-nav-link" href="community-activity.html" data-nav-key="community-activity" data-active="<!-- SLOT:activeNavItem -->">
+          <svg class="pdw-nav-link__icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5.8 11.3 2 22l10.7-3.8" ></path>
+            <path d="M18 13l4-4" ></path>
+            <path d="M15 10l5-5" ></path>
+            <path d="M12 13l-2-2" ></path>
+            <path d="m13 14-2-2" ></path>
+            <path d="m12 21-5-5" ></path>
+            <path d="m8 12-6 6" ></path>
+            <path d="M4 4h.01" ></path>
+            <path d="M22 4h.01" ></path>
+            <path d="M11 10.5h.01" ></path>
+            <path d="M11 14.5h.01" ></path>
+            <path d="M16 7h.01" ></path>
+          </svg>
+          <span>🎉 社群活动</span>
+        </a>
+      </li>
+      <li class="pdw-nav__item">
+        <a class="pdw-nav-link" href="points.html" data-nav-key="points" data-active="<!-- SLOT:activeNavItem -->">
+          <svg class="pdw-nav-link__icon" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="8" cy="8" r="6" ></circle>
+            <path d="M18.09 10.37A6 6 0 1 1 10.34 18" ></path>
+            <path d="M7 6h1v4" ></path>
+          </svg>
+          <span>⭐ 积分激励</span>
+        </a>
+      </li>
+      <li class="pdw-nav__item">
+        <a class="pdw-nav-link" href="todo.html" data-nav-key="todo" data-active="<!-- SLOT:activeNavItem -->">
+          <svg class="pdw-nav-link__icon" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" ></circle>
+            <path d="m9 12 2 2 4-4" ></path>
+          </svg>
+          <span>✅ 个人待办</span>
+        </a>
+      </li>
+      <li class="pdw-nav__item">
+        <a class="pdw-nav-link" href="settings.html" data-nav-key="settings" data-active="<!-- SLOT:activeNavItem -->">
+          <svg class="pdw-nav-link__icon" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="3" ></circle>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" ></path>
+          </svg>
+          <span>⚙️ 设置中心</span>
+        </a>
+      </li>
+      <li class="pdw-nav__item">
+        <a class="pdw-nav-link" href="profile.html" data-nav-key="profile" data-active="<!-- SLOT:activeNavItem -->">
+          <svg class="pdw-nav-link__icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" ></path>
+            <circle cx="12" cy="7" r="4" ></circle>
+          </svg>
+          <span>👤 我的</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</aside>
+
+<header class="pdw-topbar" id="pdw-topbar">
+  <div style="display:flex;align-items:center;">
+    <button class="pdw-btn--icon pdw-menu-toggle" type="button" id="pdw-menu-toggle" aria-label="打开菜单">
+      <svg class="pdw-nav-link__icon" viewBox="0 0 24 24" aria-hidden="true">
+        <line x1="4" y1="6" x2="20" y2="6" ></line>
+        <line x1="4" y1="12" x2="20" y2="12" ></line>
+        <line x1="4" y1="18" x2="20" y2="18" ></line>
+      </svg>
+    </button>
+    <div class="pdw-page-title" aria-live="polite">
+      👤 我的
+    </div>
+  </div>
+
+  <div class="pdw-topbar-center">
+    <div class="pdw-clock-widget" id="pdw-clock-widget" aria-label="当前时间">
+      <div class="pdw-clock-widget__time" id="pdw-clock-time">--:--</div>
+      <div class="pdw-clock-widget__date">
+        <span id="pdw-clock-date">--月--日</span>
+        <span id="pdw-clock-week">星期-</span>
+      </div>
+    </div>
+    <div class="pdw-weather-widget" id="pdw-weather-widget" aria-label="本地天气">
+      <svg class="pdw-weather-widget__icon" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="5" ></circle>
+        <line x1="12" y1="1" x2="12" y2="3" ></line>
+        <line x1="12" y1="21" x2="12" y2="23" ></line>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" ></line>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" ></line>
+        <line x1="1" y1="12" x2="3" y2="12" ></line>
+        <line x1="21" y1="12" x2="23" y2="12" ></line>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" ></line>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" ></line>
+      </svg>
+      <span id="pdw-weather-text">正在获取天气...</span>
+    </div>
+  </div>
+
+  <div class="pdw-userbar">
+    <button class="pdw-btn--icon" type="button" id="pdw-theme-toggle" aria-label="切换深浅主题">
+      <svg class="pdw-nav-link__icon" viewBox="0 0 24 24" aria-hidden="true" id="pdw-theme-icon">
+        <circle cx="12" cy="12" r="5" ></circle>
+        <line x1="12" y1="1" x2="12" y2="3" ></line>
+        <line x1="12" y1="21" x2="12" y2="23" ></line>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" ></line>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" ></line>
+        <line x1="1" y1="12" x2="3" y2="12" ></line>
+        <line x1="21" y1="12" x2="23" y2="12" ></line>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" ></line>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" ></line>
+      </svg>
+    </button>
+    <button class="pdw-btn--icon" type="button" aria-label="通知">
+      <svg class="pdw-nav-link__icon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" ></path>
+        <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" ></path>
+      </svg>
+    </button>
+    <span class="pdw-avatar" aria-hidden="true">雅文</span>
+    <span class="pdw-userbar__name">雅文</span>
+  </div>
+</header>
+
+
+
+<script>
+  (function () {
+    function setActiveNav() {
+      var key = document.body && document.body.dataset.activeNav;
+      if (!key) return;
+      var link = document.querySelector('.pdw-nav-link[data-nav-key="' + key + '"]');
+      if (link) {
+        link.setAttribute('data-active', 'true');
+      }
+    }
+
+    function initTheme() {
+      var saved = localStorage.getItem('pdw-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var theme = saved || (prefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+      updateThemeIcon(theme);
+    }
+
+    function updateThemeIcon(theme) {
+      var icon = document.getElementById('pdw-theme-icon');
+      if (!icon) return;
+      if (theme === 'dark') {
+        icon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />';
+      } else {
+        icon.innerHTML = '<circle cx="12" cy="12" r="5" /><line x1="12" y1="1" x2="12" y2="3" /><line x1="12" y1="21" x2="12" y2="23" /><line x1="4.22" y1="4.22" x2="5.64" y2="5.64" /><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" /><line x1="1" y1="12" x2="3" y2="12" /><line x1="21" y1="12" x2="23" y2="12" /><line x1="4.22" y1="19.78" x2="5.64" y2="18.36" /><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />';
+      }
+    }
+
+    function toggleTheme() {
+      var current = document.documentElement.getAttribute('data-theme') || 'light';
+      var next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('pdw-theme', next);
+      updateThemeIcon(next);
+    }
+
+    function pad(n) {
+      return n < 10 ? '0' + n : n;
+    }
+
+    function updateClock() {
+      var now = new Date();
+      var weekDays = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+      var timeEl = document.getElementById('pdw-clock-time');
+      var dateEl = document.getElementById('pdw-clock-date');
+      var weekEl = document.getElementById('pdw-clock-week');
+      if (timeEl) timeEl.textContent = pad(now.getHours()) + ':' + pad(now.getMinutes());
+      if (dateEl) dateEl.textContent = (now.getMonth() + 1) + '月' + now.getDate() + '日';
+      if (weekEl) weekEl.textContent = weekDays[now.getDay()];
+    }
+
+    function updateWeather() {
+      var el = document.getElementById('pdw-weather-text');
+      if (!el) return;
+      if (!navigator.geolocation) {
+        el.textContent = '杭州 24°C 晴';
+        return;
+      }
+      var cached = localStorage.getItem('pdw-weather');
+      var cachedAt = localStorage.getItem('pdw-weather-at');
+      var now = Date.now();
+      if (cached && cachedAt && now - parseInt(cachedAt, 10) < 30 * 60 * 1000) {
+        el.textContent = cached;
+        return;
+      }
+      el.textContent = '杭州 24°C 晴';
+    }
+
+    function initMenu() {
+      var toggle = document.getElementById('pdw-menu-toggle');
+      var sidebar = document.getElementById('pdw-sidebar');
+      if (!toggle || !sidebar) return;
+      toggle.addEventListener('click', function () {
+        sidebar.classList.toggle('is-open');
+      });
+      document.addEventListener('click', function (e) {
+        if (window.innerWidth > 1023) return;
+        if (!sidebar.contains(e.target) && !toggle.contains(e.target)) {
+          sidebar.classList.remove('is-open');
+        }
+      });
+    }
+
+    function init() {
+      setActiveNav();
+      initTheme();
+      updateClock();
+      updateWeather();
+      setInterval(updateClock, 1000);
+
+      var themeBtn = document.getElementById('pdw-theme-toggle');
+      if (themeBtn) themeBtn.addEventListener('click', toggleTheme);
+
+      initMenu();
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
+</script>
+
+
+<script>
+  (function () {
+    function setActiveNav() {
+      var key = document.body && document.body.dataset.activeNav;
+      if (!key) return;
+      var link = document.querySelector('.pdw-nav-link[data-nav-key="' + key + '"]');
+      if (link) {
+        link.setAttribute('data-active', 'true');
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', setActiveNav);
+    } else {
+      setActiveNav();
+    }
+  })();
+</script>
+
+<script>
+  (function () {
+    var profile = document.querySelector('.pdw-profile');
+    var fontButtons = document.querySelectorAll('.pdw-font-slider__btn');
+    var preview = document.getElementById('pdw-font-preview');
+
+    fontButtons.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var size = btn.dataset.size;
+        profile.setAttribute('data-font-size', size);
+        fontButtons.forEach(function (b) {
+          b.classList.toggle('is-active', b === btn);
+          b.setAttribute('aria-pressed', b === btn ? 'true' : 'false');
+        });
+        if (preview) {
+          preview.style.fontSize = size === 'small' ? '13px' : size === 'large' ? '18px' : '14px';
+        }
+      });
+    });
+
+    var themeButtons = document.querySelectorAll('.pdw-theme-toggle__btn');
+    themeButtons.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        themeButtons.forEach(function (b) {
+          b.classList.toggle('is-active', b === btn);
+          b.setAttribute('aria-pressed', b === btn ? 'true' : 'false');
+        });
+      });
+    });
+  })();
+</script>
+
+<script>lucide.createIcons();</script>
+
+    <style id="profile-page-layout">
+      .pdw-profile {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        max-width: 960px;
+      }
+
+      .pdw-profile__card {
+        background: var(--pdw-card);
+        border: 1px solid var(--pdw-border);
+        border-radius: var(--pdw-radius-large);
+        box-shadow: var(--pdw-shadow-sm);
+        padding: 24px;
+      }
+
+      .pdw-profile__card-title {
+        font-size: var(--pdw-text-md);
+        font-weight: 700;
+        color: var(--pdw-slate-800);
+        margin: 0 0 16px;
+      }
+
+      .pdw-profile-header {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .pdw-profile-header__avatar {
+        flex: 0 0 72px;
+        width: 72px;
+        height: 72px;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, var(--pdw-primary-500), var(--pdw-cyan-500));
+        color: var(--pdw-popover);
+        font-size: var(--pdw-text-2xl);
+        font-weight: 700;
+      }
+
+      .pdw-profile-header__body {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .pdw-profile-header__name {
+        font-size: var(--pdw-text-xl);
+        font-weight: 700;
+        color: var(--pdw-slate-900);
+      }
+
+      .pdw-profile-header__dept {
+        font-size: var(--pdw-text-sm);
+        color: var(--pdw-slate-500);
+      }
+
+      .pdw-profile-header__meta {
+        font-size: var(--pdw-text-xs);
+        color: var(--pdw-slate-400);
+      }
+
+      .pdw-setting-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 14px 0;
+        border-bottom: 1px solid var(--pdw-border);
+      }
+
+      .pdw-setting-row:last-child {
+        border-bottom: none;
+      }
+
+      .pdw-setting-row__label {
+        font-size: var(--pdw-text-sm);
+        font-weight: 500;
+        color: var(--pdw-slate-700);
+      }
+
+      .pdw-setting-row__hint {
+        font-size: var(--pdw-text-xs);
+        color: var(--pdw-slate-400);
+        margin-top: 2px;
+      }
+
+      .pdw-font-slider {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .pdw-font-slider__btn {
+        padding: 6px 14px;
+        border: 1px solid var(--pdw-border);
+        border-radius: var(--pdw-radius-medium);
+        background: var(--pdw-card);
+        color: var(--pdw-slate-600);
+        font-size: var(--pdw-text-sm);
+        cursor: pointer;
+        transition: border-color 180ms ease, color 180ms ease, background-color 180ms ease;
+      }
+
+      .pdw-font-slider__btn.is-active,
+      .pdw-font-slider__btn:hover,
+      .pdw-font-slider__btn:focus-visible {
+        border-color: var(--pdw-primary);
+        color: var(--pdw-primary);
+        background: var(--pdw-primary-50);
+        outline: none;
+      }
+
+      .pdw-font-preview {
+        margin-top: 12px;
+        padding: 12px 14px;
+        background: var(--pdw-slate-50);
+        border-radius: var(--pdw-radius-medium);
+        font-size: var(--pdw-text-base);
+        color: var(--pdw-slate-700);
+        line-height: 1.6;
+      }
+
+      .pdw-theme-toggle {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 4px;
+        background: var(--pdw-slate-100);
+        border-radius: var(--pdw-radius-medium);
+      }
+
+      .pdw-theme-toggle__btn {
+        padding: 6px 14px;
+        border: none;
+        border-radius: var(--pdw-radius-small);
+        background: transparent;
+        color: var(--pdw-slate-600);
+        font-size: var(--pdw-text-sm);
+        cursor: pointer;
+        transition: background-color 180ms ease, color 180ms ease;
+      }
+
+      .pdw-theme-toggle__btn.is-active,
+      .pdw-theme-toggle__btn:hover,
+      .pdw-theme-toggle__btn:focus-visible {
+        background: var(--pdw-card);
+        color: var(--pdw-slate-800);
+        box-shadow: var(--pdw-shadow-sm);
+        outline: none;
+      }
+
+      .pdw-check-list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .pdw-check-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: var(--pdw-text-sm);
+        color: var(--pdw-slate-700);
+        cursor: pointer;
+      }
+
+      .pdw-check-item input {
+        width: 16px;
+        height: 16px;
+        accent-color: var(--pdw-primary);
+        cursor: pointer;
+      }
+
+      .pdw-report-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+
+      .pdw-report-card {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .pdw-report-card__header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      .pdw-report-card__title {
+        font-size: var(--pdw-text-md);
+        font-weight: 700;
+        color: var(--pdw-slate-800);
+      }
+
+      .pdw-report-card__status {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 10px;
+        border-radius: 999px;
+        font-size: var(--pdw-text-xs);
+        font-weight: 600;
+        background: var(--state-success-bg);
+        color: var(--state-success);
+      }
+
+      .pdw-report-card__status--dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: currentColor;
+      }
+
+      .pdw-report-card__meta {
+        font-size: var(--pdw-text-sm);
+        color: var(--pdw-slate-500);
+      }
+
+      .pdw-report-card__stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+      }
+
+      .pdw-stat {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        padding: 12px;
+        background: var(--pdw-slate-50);
+        border-radius: var(--pdw-radius-medium);
+      }
+
+      .pdw-stat__label {
+        font-size: var(--pdw-text-xs);
+        color: var(--pdw-slate-500);
+      }
+
+      .pdw-stat__value {
+        font-size: var(--pdw-text-lg);
+        font-weight: 700;
+        color: var(--pdw-slate-800);
+      }
+
+      .pdw-report-card__actions {
+        display: flex;
+        gap: 10px;
+        margin-top: auto;
+      }
+
+      .pdw-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        padding: 8px 16px;
+        border-radius: var(--pdw-radius-medium);
+        font-size: var(--pdw-text-sm);
+        font-weight: 500;
+        cursor: pointer;
+        transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease;
+        text-decoration: none;
+      }
+
+      .pdw-btn--primary {
+        border: 1px solid var(--pdw-primary);
+        background: var(--pdw-primary);
+        color: var(--pdw-popover);
+      }
+
+      .pdw-btn--primary:hover,
+      .pdw-btn--primary:focus-visible {
+        background: var(--pdw-primary-600);
+        border-color: var(--pdw-primary-600);
+        outline: none;
+      }
+
+      .pdw-btn--secondary {
+        border: 1px solid var(--pdw-border);
+        background: var(--pdw-card);
+        color: var(--pdw-slate-700);
+      }
+
+      .pdw-btn--secondary:hover,
+      .pdw-btn--secondary:focus-visible {
+        background: var(--pdw-slate-50);
+        border-color: var(--pdw-primary-200);
+        outline: none;
+      }
+
+      .pdw-month-selector {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .pdw-month-selector select {
+        padding: 6px 28px 6px 12px;
+        border: 1px solid var(--pdw-border);
+        border-radius: var(--pdw-radius-medium);
+        background: var(--pdw-card);
+        color: var(--pdw-slate-700);
+        font-size: var(--pdw-text-sm);
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 8px center;
+      }
+
+      .pdw-ai-suggestions {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .pdw-ai-suggestion {
+        display: flex;
+        gap: 12px;
+        padding: 14px;
+        background: var(--pdw-slate-50);
+        border: 1px solid var(--pdw-border);
+        border-radius: var(--pdw-radius-medium);
+      }
+
+      .pdw-ai-suggestion__icon {
+        flex: 0 0 32px;
+        width: 32px;
+        height: 32px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: var(--pdw-radius-medium);
+        background: linear-gradient(135deg, var(--pdw-primary-500), var(--pdw-cyan-500));
+        color: var(--pdw-popover);
+      }
+
+      .pdw-ai-suggestion__icon svg {
+        width: 18px;
+        height: 18px;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        fill: none;
+      }
+
+      .pdw-ai-suggestion__body {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .pdw-ai-suggestion__title {
+        font-size: var(--pdw-text-sm);
+        font-weight: 700;
+        color: var(--pdw-slate-800);
+      }
+
+      .pdw-ai-suggestion__desc {
+        font-size: var(--pdw-text-sm);
+        color: var(--pdw-slate-600);
+        line-height: 1.5;
+      }
+
+      .pdw-logout {
+        display: flex;
+        justify-content: center;
+        padding: 8px 0 16px;
+      }
+
+      .pdw-logout__btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        padding: 10px 28px;
+        border: 1px solid var(--state-error);
+        border-radius: var(--pdw-radius-medium);
+        background: var(--pdw-card);
+        color: var(--state-error);
+        font-size: var(--pdw-text-sm);
+        font-weight: 500;
+        cursor: pointer;
+        transition: background-color 180ms ease, color 180ms ease;
+      }
+
+      .pdw-logout__btn:hover,
+      .pdw-logout__btn:focus-visible {
+        background: var(--state-error);
+        color: var(--pdw-popover);
+        outline: none;
+      }
+
+      .pdw-profile[data-font-size="small"] { --pdw-profile-text: var(--pdw-text-sm); }
+      .pdw-profile[data-font-size="medium"] { --pdw-profile-text: var(--pdw-text-base); }
+      .pdw-profile[data-font-size="large"] { --pdw-profile-text: var(--pdw-text-lg); }
+
+      .pdw-profile[data-font-size] .pdw-ai-suggestion__desc,
+      .pdw-profile[data-font-size] .pdw-report-card__meta,
+      .pdw-profile[data-font-size] .pdw-setting-row__label {
+        font-size: var(--pdw-profile-text);
+      }
+
+      @media (max-width: 768px) {
+        .pdw-report-grid { grid-template-columns: 1fr; }
+        .pdw-report-card__stats { grid-template-columns: 1fr; }
+        .pdw-profile-header { flex-direction: column; align-items: flex-start; }
+      }
+    </style>
+</body>
+</html>

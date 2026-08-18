@@ -1,0 +1,205 @@
+/* 雅文的工作台 - 品牌设计令牌（春色系简约高级版） */
+
+:root {
+  /* 品牌主色：青草绿 */
+  --pdw-primary-50: #f0fdf4;
+  --pdw-primary-100: #dcfce7;
+  --pdw-primary-200: #bbf7d0;
+  --pdw-primary-300: #86efac;
+  --pdw-primary-400: #7cbc67;
+  --pdw-primary-500: #65a352;
+  --pdw-primary-600: #4d7f41;
+  --pdw-primary-700: #3b6333;
+  --pdw-primary-800: #2a4825;
+  --pdw-primary-900: #1a2e17;
+  --pdw-primary-950: #0d1a0c;
+
+  /* 清新青：湖水蓝 / 淡天蓝 */
+  --pdw-cyan-50: #f0f9ff;
+  --pdw-cyan-100: #e0f2fe;
+  --pdw-cyan-200: #b5e8ff;
+  --pdw-cyan-300: #a7d3d6;
+  --pdw-cyan-400: #7dd3fc;
+  --pdw-cyan-500: #38bdf8;
+  --pdw-cyan-600: #0ea5e9;
+  --pdw-cyan-700: #0284c7;
+
+  /* 激励金/杏色 */
+  --pdw-amber-50: #fffbeb;
+  --pdw-amber-100: #fef3c7;
+  --pdw-amber-400: #fbbf24;
+  --pdw-amber-500: #f59e0b;
+  --pdw-amber-600: #d97706;
+
+  /* 中性色 */
+  --pdw-slate-50: #f8fafc;
+  --pdw-slate-100: #f1f5f9;
+  --pdw-slate-200: #e2e8f0;
+  --pdw-slate-300: #cbd5e1;
+  --pdw-slate-400: #94a3b8;
+  --pdw-slate-500: #64748b;
+  --pdw-slate-600: #475569;
+  --pdw-slate-700: #334155;
+  --pdw-slate-800: #1e293b;
+  --pdw-slate-900: #0f172a;
+  --pdw-slate-950: #020617;
+
+  /* RGB 分量，用于 rgba() 透明色 */
+  --pdw-white-rgb: 255, 255, 255;
+  --pdw-black-rgb: 0, 0, 0;
+  --pdw-slate-900-rgb: 15, 23, 42;
+  --pdw-slate-800-rgb: 30, 41, 59;
+  --pdw-slate-700-rgb: 51, 65, 85;
+  --pdw-cyan-600-rgb: 14, 165, 233;
+  --pdw-slate-950-rgb: 2, 6, 23;
+  --pdw-primary-950-rgb: 13, 26, 12;
+  --pdw-primary-900-rgb: 26, 72, 37;
+  --pdw-primary-800-rgb: 42, 72, 37;
+  --pdw-primary-700-rgb: 59, 99, 51;
+  --pdw-primary-600-rgb: 77, 127, 65;
+  --pdw-primary-500-rgb: 101, 163, 82;
+  --pdw-primary-400-rgb: 124, 188, 103;
+  --pdw-cyan-400-rgb: 125, 211, 252;
+
+  /* 奖章/排行专用色 */
+  --pdw-gold-400: #ffd700;
+  --pdw-gold-600: #ffaa00;
+  --pdw-bronze-50: #fef7f0;
+  --pdw-bronze-400: #cd7f32;
+  --pdw-bronze-600: #a05a2c;
+  --pdw-medal-gold: linear-gradient(135deg, var(--pdw-gold-400), var(--pdw-gold-600));
+  --pdw-medal-silver: linear-gradient(135deg, var(--pdw-slate-400), var(--pdw-slate-500));
+  --pdw-medal-bronze: linear-gradient(135deg, var(--pdw-bronze-400), var(--pdw-bronze-600));
+  --pdw-medal-text: #ffffff;
+  --pdw-medal-silver-bg: linear-gradient(180deg, var(--pdw-slate-100), var(--pdw-card));
+  --pdw-medal-bronze-bg: linear-gradient(180deg, var(--pdw-bronze-50), var(--pdw-card));
+  --pdw-quick-icon-bg: linear-gradient(135deg, #cde5cd 0%, #c2e2c2 50%, #b9dfb9 100%);
+
+  /* 语义状态色 */
+  --state-success: #7cbc67;
+  --state-success-bg: #e8f5e4;
+  --state-warning: #f59e0b;
+  --state-warning-bg: #fef3c7;
+  --state-error: #ef4444;
+  --state-error-bg: #fee2e2;
+  --state-info: #38bdf8;
+  --state-info-bg: #e0f2fe;
+
+  /* 语义别名 */
+  --pdw-background: linear-gradient(180deg, #e8f7ff 0%, #f0fdf4 100%);
+  --pdw-foreground: #1e293b;
+  --pdw-card: rgba(255, 255, 255, 0.82);
+  --pdw-card-foreground: #1e293b;
+  --pdw-popover: #ffffff;
+  --pdw-popover-foreground: #1e293b;
+  --pdw-primary: #7cbc67;
+  --pdw-primary-foreground: #ffffff;
+  --pdw-muted: #f1f5f9;
+  --pdw-muted-foreground: #64748b;
+  --pdw-border: rgba(148, 163, 184, 0.18);
+  --pdw-input: #e2e8f0;
+  --pdw-ring: #7cbc67;
+  --pdw-radius-small: 4px;
+  --pdw-radius-medium: 8px;
+  --pdw-radius-large: 12px;
+
+  /* 结构语义色（透明/渐变） */
+  --pdw-sidebar-bg: linear-gradient(180deg, rgba(var(--pdw-primary-950-rgb), 0.92) 0%, rgba(var(--pdw-primary-600-rgb), 0.88) 100%);
+  --pdw-sidebar-bg-dark: linear-gradient(180deg, rgba(var(--pdw-slate-950-rgb), 0.95) 0%, rgba(var(--pdw-primary-900-rgb), 0.92) 100%);
+  --pdw-topbar-bg: rgba(var(--pdw-white-rgb), 0.72);
+  --pdw-topbar-bg-dark: rgba(var(--pdw-slate-900-rgb), 0.72);
+  --pdw-glass-bg: rgba(var(--pdw-white-rgb), 0.6);
+  --pdw-glass-bg-dark: rgba(var(--pdw-slate-800-rgb), 0.6);
+  --pdw-nav-link-text: rgba(var(--pdw-white-rgb), 0.78);
+  --pdw-nav-link-hover-bg: rgba(var(--pdw-white-rgb), 0.1);
+  --pdw-nav-link-active-bg: rgba(var(--pdw-white-rgb), 0.16);
+  --pdw-brand-border: rgba(var(--pdw-white-rgb), 0.1);
+
+  /* 字体系统：圆润、轻字重 */
+  --pdw-font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --pdw-font-mono: "SF Mono", "JetBrains Mono", "Fira Code", Consolas, "PingFang SC", monospace;
+  --pdw-font-rounded: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  /* 字号系统 */
+  --pdw-text-xs: 12px;
+  --pdw-text-sm: 13px;
+  --pdw-text-base: 14px;
+  --pdw-text-md: 16px;
+  --pdw-text-lg: 18px;
+  --pdw-text-xl: 20px;
+  --pdw-text-2xl: 24px;
+  --pdw-text-3xl: 30px;
+
+  /* 阴影：更清透 */
+  --pdw-shadow-sm: 0 1px 2px 0 rgba(15, 23, 42, 0.03);
+  --pdw-shadow-md: 0 4px 12px -2px rgba(20, 83, 45, 0.05), 0 2px 6px -2px rgba(15, 23, 42, 0.03);
+  --pdw-shadow-lg: 0 12px 24px -6px rgba(20, 83, 45, 0.05), 0 4px 8px -4px rgba(15, 23, 42, 0.03);
+
+  /* 动画 */
+  --pdw-transition-fast: 160ms cubic-bezier(0.4, 0, 0.2, 1);
+  --pdw-transition-base: 240ms cubic-bezier(0.4, 0, 0.2, 1);
+  --pdw-transition-slow: 360ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 深色模式：青草绿为主的高雅暗色 */
+[data-theme="dark"] {
+  --pdw-background: linear-gradient(180deg, #0f172a 0%, #1a2e17 100%);
+  --pdw-foreground: #f1f5f9;
+  --pdw-card: rgba(30, 41, 59, 0.72);
+  --pdw-card-foreground: #f1f5f9;
+  --pdw-popover: #1e293b;
+  --pdw-popover-foreground: #f1f5f9;
+  --pdw-primary: #7cbc67;
+  --pdw-primary-foreground: #052e16;
+  --pdw-muted: #334155;
+  --pdw-muted-foreground: #94a3b8;
+  --pdw-border: rgba(148, 163, 184, 0.12);
+  --pdw-input: #334155;
+  --pdw-ring: #7cbc67;
+  --pdw-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.18);
+  --pdw-shadow-md: 0 4px 12px -2px rgba(0, 0, 0, 0.2), 0 2px 6px -2px rgba(0, 0, 0, 0.12);
+  --pdw-shadow-lg: 0 12px 24px -6px rgba(0, 0, 0, 0.25), 0 4px 8px -4px rgba(0, 0, 0, 0.15);
+}
+
+/* 字体工具类 */
+.font-sans { font-family: var(--pdw-font-sans); }
+.font-mono { font-family: var(--pdw-font-mono); }
+.font-rounded { font-family: var(--pdw-font-rounded); }
+
+/* 字号工具类 */
+.text-xs { font-size: var(--pdw-text-xs); }
+.text-sm { font-size: var(--pdw-text-sm); }
+.text-base { font-size: var(--pdw-text-base); }
+.text-md { font-size: var(--pdw-text-md); }
+.text-lg { font-size: var(--pdw-text-lg); }
+.text-xl { font-size: var(--pdw-text-xl); }
+.text-2xl { font-size: var(--pdw-text-2xl); }
+.text-3xl { font-size: var(--pdw-text-3xl); }
+
+/* 通用按钮悬停缩放 */
+.pdw-btn,
+button,
+.pdw-filter-chip,
+.pdw-nav-link,
+.pdw-card,
+.pdw-stat,
+.pdw-asset-card {
+  transition: transform var(--pdw-transition-fast), box-shadow var(--pdw-transition-fast), background-color var(--pdw-transition-fast);
+}
+
+.pdw-btn:hover,
+button:not(:disabled):hover,
+.pdw-filter-chip:hover,
+.pdw-nav-link:hover,
+.pdw-card:hover,
+.pdw-stat:hover,
+.pdw-asset-card:hover {
+  transform: translateY(-1px) scale(1.01);
+}
+
+.pdw-btn:active,
+button:not(:disabled):active,
+.pdw-filter-chip:active,
+.pdw-nav-link:active {
+  transform: translateY(0) scale(0.99);
+}

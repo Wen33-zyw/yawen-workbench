@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html class="light" lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚙️ 设置中心</title>
+    <style id="theme-vars">
+/* 雅文的工作台 - 品牌设计令牌（春色系简约高级版） */
+
+:root {
+  /* 品牌主色：青草绿 */
+  --pdw-primary-50: #f0fdf4;
+  --pdw-primary-100: #dcfce7;
+  --pdw-primary-200: #bbf7d0;
+  --pdw-primary-300: #86efac;
+  --pdw-primary-400: #7cbc67;
+  --pdw-primary-500: #65a352;
+  --pdw-primary-600: #4d7f41;
+  --pdw-primary-700: #3b6333;
+  --pdw-primary-800: #2a4825;
+  --pdw-primary-900: #1a2e17;
+  --pdw-primary-950: #0d1a0c;
+
+  /* 清新青：湖水蓝 / 淡天蓝 */
+  --pdw-cyan-50: #f0f9ff;
+  --pdw-cyan-100: #e0f2fe;
+  --pdw-cyan-200: #b5e8ff;
+  --pdw-cyan-300: #a7d3d6;
+  --pdw-cyan-400: #7dd3fc;
+  --pdw-cyan-500: #38bdf8;
+  --pdw-cyan-600: #0ea5e9;
+  --pdw-cyan-700: #0284c7;
+
+  /* 激励金/杏色 */
+  --pdw-amber-50: #fffbeb;
+  --pdw-amber-100: #fef3c7;
+  --pdw-amber-400: #fbbf24;
+  --pdw-amber-500: #f59e0b;
+  --pdw-amber-600: #d97706;
+
+  /* 中性色 */
+  --pdw-slate-50: #f8fafc;
+  --pdw-slate-100: #f1f5f9;
+  --pdw-slate-200: #e2e8f0;
+  --pdw-slate-300: #cbd5e1;
+  --pdw-slate-400: #94a3b8;
+  --pdw-slate-500: #64748b;
+  --pdw-slate-600: #475569;
+  --pdw-slate-700: #334155;
+  --pdw-slate-800: #1e293b;
+  --pdw-slate-900: #0f172a;
+  --pdw-slate-950: #020617;
+
+  /* RGB 分量，用于 rgba() 透明色 */
+  --pdw-white-rgb: 255, 255, 255;
+  --pdw-black-rgb: 0, 0, 0;
+  --pdw-slate-900-rgb: 15, 23, 42;
+  --pdw-slate-800-rgb: 30, 41, 59;
+  --pdw-slate-700-rgb: 51, 65, 85;
+  --pdw-cyan-600-rgb: 14, 165, 233;
+  --pdw-slate-950-rgb: 2, 6, 23;
+  --pdw-primary-950-rgb: 13, 26, 12;
+  --pdw-primary-900-rgb: 26, 72, 37;
+  --pdw-primary-800-rgb: 42, 72, 37;
+  --pdw-primary-700-rgb: 59, 99, 51;
+  --pdw-primary-600-rgb: 77, 127, 65;
+  --pdw-primary-500-rgb: 101, 163, 82;
+  --pdw-primary-400-rgb: 124, 188, 103;
+  --pdw-cyan-400-rgb: 125, 211, 252;
+
+  /* 奖章/排行专用色 */
+  --pdw-gold-400: #ffd700;
+  --pdw-gold-600: #ffaa00;
+  --pdw-bronze-50: #fef7f0;
+  --pdw-bronze-400: #cd7f32;
+  --pdw-bronze-600: #a05a2c;
+  --pdw-medal-gold: linear-gradient(135deg, var(--pdw-gold-400), var(--pdw-gold-600));
+  --pdw-medal-silver: linear-gradient(135deg, var(--pdw-slate-400), var(--pdw-slate-500));
+  --pdw-medal-bronze: linear-gradient(135deg, var(--pdw-bronze-400), var(--pdw-bronze-600));
+  --pdw-medal-text: #ffffff;
+  --pdw-medal-silver-bg: linear-gradient(180deg, var(--pdw-slate-100), var(--pdw-card));
+  --pdw-medal-bronze-bg: linear-gradient(180deg, var(--pdw-bronze-50), var(--pdw-card));
+  --pdw-quick-icon-bg: linear-gradient(135deg, #cde5cd 0%, #c2e2c2 50%, #b9dfb9 100%);
+
+  /* 语义状态色 */
+  --state-success: #7cbc67;
+  --state-success-bg: #e8f5e4;
+  --state-warning: #f59e0b;
+  --state-warning-bg: #fef3c7;
+  --state-error: #ef4444;
+  --state-error-bg: #fee2e2;
+  --state-info: #38bdf8;
+  --state-info-bg: #e0f2fe;
+
+  /* 语义别名 */
+  --pdw-background: linear-gradient(180deg, #e8f7ff 0%, #f0fdf4 100%);
+  --pdw-foreground: #1e293b;
+  --pdw-card: rgba(255, 255, 255, 0.82);
+  --pdw-card-foreground: #1e293b;
+  --pdw-popover: #ffffff;
+  --pdw-popover-foreground: #1e293b;
+  --pdw-primary: #7cbc67;
+  --pdw-primary-foreground: #ffffff;
+  --pdw-muted: #f1f5f9;
+  --pdw-muted-foreground: #64748b;
+  --pdw-border: rgba(148, 163, 184, 0.18);
+  --pdw-input: #e2e8f0;
+  --pdw-ring: #7cbc67;
+  --pdw-radius-small: 4px;
+  --pdw-radius-medium: 8px;
+  --pdw-radius-large: 12px;
+
+  /* 结构语义色（透明/渐变） */
+  --pdw-sidebar-bg: linear-gradient(180deg, rgba(var(--pdw-primary-950-rgb), 0.92) 0%, rgba(var(--pdw-primary-600-rgb), 0.88) 100%);
+  --pdw-sidebar-bg-dark: linear-gradient(180deg, rgba(var(--pdw-slate-950-rgb), 0.95) 0%, rgba(var(--pdw-primary-900-rgb), 0.92) 100%);
+  --pdw-topbar-bg: rgba(var(--pdw-white-rgb), 0.72);
+  --pdw-topbar-bg-dark: rgba(var(--pdw-slate-900-rgb), 0.72);
+  --pdw-glass-bg: rgba(var(--pdw-white-rgb), 0.6);
+  --pdw-glass-bg-dark: rgba(var(--pdw-slate-800-rgb), 0.6);
+  --pdw-nav-link-text: rgba(var(--pdw-white-rgb), 0.78);
+  --pdw-nav-link-hover-bg: rgba(var(--pdw-white-rgb), 0.1);
+  --pdw-nav-link-active-bg: rgba(var(--pdw-white-rgb), 0.16);
+  --pdw-brand-border: rgba(var(--pdw-white-rgb), 0.1);
+
+  /* 字体系统：圆润、轻字重 */
+  --pdw-font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --pdw-font-mono: "SF Mono", "JetBrains Mono", "Fira Code", Consolas, "PingFang SC", monospace;
+  --pdw-font-rounded: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  /* 字号系统 */
+  --pdw-text-xs: 12px;
+  --pdw-text-sm: 13px;
+  --pdw-text-base: 14px;
+  --pdw-text-md: 16px;
+  --pdw-text-lg: 18px;
+  --pdw-text-xl: 20px;
+  --pdw-text-2xl: 24px;
+  --pdw-text-3xl: 30px;
+
+  /* 阴影：更清透 */
+  --pdw-shadow-sm: 0 1px 2px 0 rgba(15, 23, 42, 0.03);
+  --pdw-shadow-md: 0 4px 12px -2px rgba(20, 83, 45, 0.05), 0 2px 6px -2px rgba(15, 23, 42, 0.03);
+  --pdw-shadow-lg: 0 12px 24px -6px rgba(20, 83, 45, 0.05), 0 4px 8px -4px rgba(15, 23, 42, 0.03);
+
+  /* 动画 */
+  --pdw-transition-fast: 160ms cubic-bezier(0.4, 0, 0.2, 1);
+  --pdw-transition-base: 240ms cubic-bezier(0.4, 0, 0.2, 1);
+  --pdw-transition-slow: 360ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 深色模式：青草绿为主的高雅暗色 */
+[data-theme="dark"] {
+  --pdw-background: linear-gradient(180deg, #0f172a 0%, #1a2e17 100%);
+  --pdw-foreground: #f1f5f9;
+  --pdw-card: rgba(30, 41, 59, 0.72);
+  --pdw-card-foreground: #f1f5f9;
+  --pdw-popover: #1e293b;
+  --pdw-popover-foreground: #f1f5f9;
+  --pdw-primary: #7cbc67;
+  --pdw-primary-foreground: #052e16;
+  --pdw-muted: #334155;
+  --pdw-muted-foreground: #94a3b8;
+  --pdw-border: rgba(148, 163, 184, 0.12);
+  --pdw-input: #334155;
+  --pdw-ring: #7cbc67;
+  --pdw-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.18);
+  --pdw-shadow-md: 0 4px 12px -2px rgba(0, 0, 0, 0.2), 0 2px 6px -2px rgba(0, 0, 0, 0.12);
+  --pdw-shadow-lg: 0 12px 24px -6px rgba(0, 0, 0, 0.25), 0 4px 8px -4px rgba(0, 0, 0, 0.15);
+}
+
+/* 字体工具类 */
+.font-sans { font-family: var(--pdw-font-sans); }
+.font-mono { font-family: var(--pdw-font-mono); }
+.font-rounded { font-family: var(--pdw-font-rounded); }
+
+/* 字号工具类 */
+.text-xs { font-size: var(--pdw-text-xs); }
+.text-sm { font-size: var(--pdw-text-sm); }
+.text-base { font-size: var(--pdw-text-base); }
+.text-md { font-size: var(--pdw-text-md); }
+.text-lg { font-size: var(--pdw-text-lg); }
+.text-xl { font-size: var(--pdw-text-xl); }
+.text-2xl { font-size: var(--pdw-text-2xl); }
+.text-3xl { font-size: var(--pdw-text-3xl); }
+
+/* 通用按钮悬停缩放 */
+.pdw-btn,
+button,
+.pdw-filter-chip,
+.pdw-nav-link,
+.pdw-card,
+.pdw-stat,
+.pdw-asset-card {
+  transition: transform var(--pdw-transition-fast), box-shadow var(--pdw-transition-fast), background-color var(--pdw-transition-fast);
+}
+
+.pdw-btn:hover,
+button:not(:disabled):hover,
+.pdw-filter-chip:hover,
+.pdw-nav-link:hover,
+.pdw-card:hover,
+.pdw-stat:hover,
+.pdw-asset-card:hover {
+  transform: translateY(-1px) scale(1.01);
+}
+
+.pdw-btn:active,
+button:not(:disabled):active,
+.pdw-filter-chip:active,
+.pdw-nav-link:active {
+  transform: translateY(0) scale(0.99);
+}
+
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.1/dist/index.global.js"></script>
+    <script src="https://unpkg.com/lucide@1.8.0/dist/umd/lucide.min.js"></script>
+    <style type="text/tailwindcss">
+  @theme inline {
+    --color-background: var(--pdw-background);
+    --color-foreground: var(--pdw-foreground);
+    --color-card: var(--pdw-card);
+    --color-card-foreground: var(--pdw-card-foreground);
+    --color-popover: var(--pdw-popover);
+    --color-popover-foreground: var(--pdw-popover-foreground);
+    --color-primary: var(--pdw-primary);
+    --color-primary-foreground: var(--pdw-primary-foreground);
+    --color-muted: var(--pdw-muted);
+    --color-muted-foreground: var(--pdw-muted-foreground);
+    --color-border: var(--pdw-border);
+    --color-input: var(--pdw-input);
+    --color-ring: var(--pdw-ring);
+    --radius-sm: var(--pdw-radius-small);
+    --radius-md: var(--pdw-radius-medium);
+    --radius-lg: var(--pdw-radius-large);
+  }
+  @layer base {
+    body { background: var(--pdw-background); color: var(--pdw-foreground); }
+    td, th { @apply break-words; word-break: break-all; word-break: auto-phrase; }
+    th { @apply whitespace-nowrap; }
+  }
+    </style>
+    <style id="semantic-token-fallback">
+      .bg-background { background-color: var(--pdw-background); }
+      .text-background { color: var(--pdw-background); }
+      .border-background { border-color: var(--pdw-background); }
+      .ring-background { --tw-ring-color: var(--pdw-background); }
+      .bg-foreground { background-color: var(--pdw-foreground); }
+      .text-foreground { color: var(--pdw-foreground); }
+      .border-foreground { border-color: var(--pdw-foreground); }
+      .ring-foreground { --tw-ring-color: var(--pdw-foreground); }
+      .bg-card { background-color: var(--pdw-card); }
+      .text-card { color: var(--pdw-card); }
+      .border-card { border-color: var(--pdw-card); }
+      .ring-card { --tw-ring-color: var(--pdw-card); }
+      .bg-card-foreground { background-color: var(--pdw-card-foreground); }
+      .text-card-foreground { color: var(--pdw-card-foreground); }
+      .border-card-foreground { border-color: var(--pdw-card-foreground); }
+      .ring-card-foreground { --tw-ring-color: var(--pdw-card-foreground); }
+      .bg-popover { background-color: var(--pdw-popover); }
+      .text-popover { color: var(--pdw-popover); }
+      .border-popover { border-color: var(--pdw-popover); }
+      .ring-popover { --tw-ring-color: var(--pdw-popover); }
+      .bg-popover-foreground { background-color: var(--pdw-popover-foreground); }
+      .text-popover-foreground { color: var(--pdw-popover-foreground); }
+      .border-popover-foreground { border-color: var(--pdw-popover-foreground); }
+      .ring-popover-foreground { --tw-ring-color: var(--pdw-popover-foreground); }
+      .bg-primary { background-color: var(--pdw-primary); }
+      .text-primary { color: var(--pdw-primary); }
+      .border-primary { border-color: var(--pdw-primary); }
+      .ring-primary { --tw-ring-color: var(--pdw-primary); }
+      .bg-primary-foreground { background-color: var(--pdw-primary-foreground); }
+      .text-primary-foreground { color: var(--pdw-primary-foreground); }
+      .border-primary-foreground { border-color: var(--pdw-primary-foreground); }
+      .ring-primary-foreground { --tw-ring-color: var(--pdw-primary-foreground); }
+      .bg-muted { background-color: var(--pdw-muted); }
+      .text-muted { color: var(--pdw-muted); }
+      .border-muted { border-color: var(--pdw-muted); }
+      .ring-muted { --tw-ring-color: var(--pdw-muted); }
+      .bg-muted-foreground { background-color: var(--pdw-muted-foreground); }
+      .text-muted-foreground { color: var(--pdw-muted-foreground); }
+      .border-muted-foreground { border-color: var(--pdw-muted-foreground); }
+      .ring-muted-foreground { --tw-ring-color: var(--pdw-muted-foreground); }
+      .bg-border { background-color: var(--pdw-border); }
+      .text-border { color: var(--pdw-border); }
+      .border-border { border-color: var(--pdw-border); }
+      .ring-border { --tw-ring-color: var(--pdw-border); }
+      .bg-input { background-color: var(--pdw-input); }
+      .text-input { color: var(--pdw-input); }
+      .border-input { border-color: var(--pdw-input); }
+      .ring-input { --tw-ring-color: var(--pdw-input); }
+      .bg-ring { background-color: var(--pdw-ring); }
+      .text-ring { color: var(--pdw-ring); }
+      .border-ring { border-color: var(--pdw-ring); }
+      .ring-ring { --tw-ring-color: var(--pdw-ring); }
+    </style>
+    <style>
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      [data-icon] {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        mask-position: center;
+        background-color: currentColor;
+      }
+    </style>
+</head>
+<body data-active-nav="settings">
+<style id="critical-layout">
+  :root {
+    --pdw-sidebar-width: 240px;
+    --pdw-topbar-height: 72px;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; min-height: 100%; }
+  body {
+    font-family: var(--pdw-font-rounded);
+    font-weight: 400;
+    color: var(--pdw-foreground);
+    background: var(--pdw-background);
+    background-attachment: fixed;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,h2,h3,h4,h5,h6 { font-family: var(--pdw-font-rounded); font-weight: 700; margin: 0; }
+  .pdw-shell { min-height: 100vh; }
+  .pdw-sidebar {
+    position: fixed; inset: 0 auto 0 0; width: var(--pdw-sidebar-width);
+    display: flex; flex-direction: column;
+    background: linear-gradient(180deg, rgba(var(--pdw-primary-950-rgb), 0.92) 0%, rgba(var(--pdw-primary-600-rgb), 0.88) 100%);
+    backdrop-filter: blur(16px); color: var(--pdw-primary-100);
+    box-shadow: var(--pdw-shadow-lg); z-index: 100;
+  }
+  [data-theme="dark"] .pdw-sidebar {
+    background: linear-gradient(180deg, rgba(var(--pdw-slate-950-rgb), 0.95) 0%, rgba(var(--pdw-primary-900-rgb), 0.92) 100%);
+  }
+  .pdw-brand { display:flex; flex-direction:column; justify-content:center; height:var(--pdw-topbar-height); padding:0 20px; border-bottom: 1px solid var(--pdw-brand-border); }
+  .pdw-brand__name { font-size:var(--pdw-text-lg); font-weight:800; color:var(--pdw-popover); }
+  .pdw-brand__sub { font-size:var(--pdw-text-xs); color:var(--pdw-primary-200); margin-top:4px; font-weight:500; }
+  .pdw-nav { flex:1 1 auto; overflow-y:auto; padding:12px 0; }
+  .pdw-nav__list { list-style:none; margin:0; padding:0; }
+  .pdw-nav__item { margin:3px 10px; }
+  .pdw-nav-link { display:flex; align-items:center; gap:12px; padding:11px 14px; border-radius:var(--pdw-radius-medium); color: var(--pdw-nav-link-text); text-decoration:none; font-size:var(--pdw-text-sm); font-weight:500; transition:all var(--pdw-transition-fast); outline:none; min-height:44px; }
+  .pdw-nav-link:hover, .pdw-nav-link:focus-visible { background: var(--pdw-nav-link-hover-bg); color:var(--pdw-popover); transform:translateX(2px); }
+  .pdw-nav-link[data-active="true"] { background: var(--pdw-nav-link-active-bg); color:var(--pdw-popover); box-shadow:inset 3px 0 0 var(--pdw-primary-300); }
+  .pdw-nav-link__icon { flex:0 0 20px; width:20px; height:20px; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; fill:none; }
+  .pdw-topbar { position:fixed; top:0; left:var(--pdw-sidebar-width); right:0; height:var(--pdw-topbar-height); display:flex; align-items:center; justify-content:space-between; padding:0 24px; background: var(--pdw-topbar-bg); backdrop-filter:blur(12px); border-bottom:1px solid var(--pdw-border); z-index:90; }
+  [data-theme="dark"] .pdw-topbar { background: var(--pdw-topbar-bg-dark); }
+  .pdw-page-title { font-size:var(--pdw-text-xl); font-weight:800; color:var(--pdw-slate-800); }
+  [data-theme="dark"] .pdw-page-title { color:var(--pdw-slate-100); }
+  .pdw-topbar-center { display:flex; align-items:center; gap:18px; flex:1 1 auto; justify-content:center; }
+  .pdw-clock-widget { display:flex; align-items:center; gap:12px; padding:8px 16px; background: var(--pdw-glass-bg); border:1px solid var(--pdw-border); border-radius:var(--pdw-radius-large); box-shadow:var(--pdw-shadow-sm); }
+  [data-theme="dark"] .pdw-clock-widget { background: var(--pdw-glass-bg-dark); }
+  .pdw-clock-widget__time { font-size:var(--pdw-text-2xl); font-weight:800; color:var(--pdw-primary-700); font-variant-numeric:tabular-nums; }
+  [data-theme="dark"] .pdw-clock-widget__time { color:var(--pdw-primary-300); }
+  .pdw-clock-widget__date { display:flex; flex-direction:column; font-size:var(--pdw-text-xs); color:var(--pdw-slate-600); line-height:1.4; }
+  [data-theme="dark"] .pdw-clock-widget__date { color:var(--pdw-slate-300); }
+  .pdw-weather-widget { display:flex; align-items:center; gap:8px; padding:8px 14px; background: var(--pdw-glass-bg); border:1px solid var(--pdw-border); border-radius:var(--pdw-radius-large); font-size:var(--pdw-text-sm); color:var(--pdw-slate-700); }
+  [data-theme="dark"] .pdw-weather-widget { background: var(--pdw-glass-bg-dark); color:var(--pdw-slate-200); }
+  .pdw-weather-widget__icon { width:22px; height:22px; stroke:var(--pdw-amber-500); fill:none; stroke-width:2; }
+  .pdw-userbar { display:flex; align-items:center; gap:12px; }
+  .pdw-avatar { display:inline-flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:50%; background:linear-gradient(135deg,var(--pdw-primary-400),var(--pdw-cyan-400)); color:var(--pdw-popover); font-size:var(--pdw-text-xs); font-weight:700; }
+  .pdw-userbar__name { font-size:var(--pdw-text-sm); font-weight:500; color:var(--pdw-slate-700); }
+  [data-theme="dark"] .pdw-userbar__name { color:var(--pdw-slate-200); }
+  .pdw-btn--icon { display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border:none; border-radius:var(--pdw-radius-medium); background: var(--pdw-glass-bg); color:var(--pdw-slate-600); cursor:pointer; transition:all var(--pdw-transition-fast); min-width:44px; min-height:44px; }
+  [data-theme="dark"] .pdw-btn--icon { background: var(--pdw-glass-bg-dark); color:var(--pdw-slate-300); }
+  .pdw-btn--icon:hover, .pdw-btn--icon:focus-visible { background:var(--pdw-primary-100); color:var(--pdw-primary-700); transform:scale(1.08); }
+  [data-theme="dark"] .pdw-btn--icon:hover, [data-theme="dark"] .pdw-btn--icon:focus-visible { background:rgba(var(--pdw-primary-900-rgb), 0.6); color:var(--pdw-primary-300); }
+  .pdw-main { margin-left:var(--pdw-sidebar-width); padding-top:var(--pdw-topbar-height); min-height:100vh; }
+  .pdw-main__inner { padding:24px; min-height:calc(100vh - var(--pdw-topbar-height)); }
+  .pdw-menu-toggle { display:none; }
+  @media (max-width:1023px) {
+    :root { --pdw-topbar-height:64px; }
+    .pdw-menu-toggle { display:inline-flex; margin-right:12px; }
+    .pdw-sidebar { transform:translateX(-100%); transition:transform var(--pdw-transition-base); }
+    .pdw-sidebar.is-open { transform:translateX(0); }
+    .pdw-topbar { left:0; padding:0 16px; }
+    .pdw-topbar-center { display:none; }
+    .pdw-main { margin-left:0; }
+    .pdw-main__inner { padding:16px; }
+  }
+  @media (max-width:767px) {
+    .pdw-page-title { font-size:var(--pdw-text-md); }
+    .pdw-userbar__name { display:none; }
+  }
+</style>
+
+<aside class="pdw-sidebar" id="pdw-sidebar" aria-label="主导航">
+  <div class="pdw-brand">
+    <span class="pdw-brand__name">雅文的工作台</span>
+    <span class="pdw-brand__sub">文旅私域运营 · 清新高效</span>
+  </div>
+  <nav class="pdw-nav">
+    <ul class="pdw-nav__list">
+      <li class="pdw-nav__item"><a class="pdw-nav-link" href="index.html" data-nav-key="index"><svg class="pdw-nav-link__icon" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg><span>🏠 工作台首页</span></a></li>
+      <li class="pdw-nav__item"><a class="pdw-nav-link" href="daily-opportunity.html" data-nav-key="daily-opportunity"><svg class="pdw-nav-link__icon" viewBox="0 0 24 24"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg><span>📊 每日商机数据</span></a></li>
+      <li class="pdw-nav__item"><a class="pdw-nav-link" href="weekly-deals.html" data-nav-key="weekly-deals"><svg class="pdw-nav-link__icon" viewBox="0 0 24 24"><path d="M19 11l-3-3a2.828 2.828 0 0 0-4 0l-1 1a2.828 2.828 0 0 1-4 0l-1-1a2.828 2.828 0 0 0-4 0L2 11l5 5 2-2 2 2 5-5 3 3 5-5z"/></svg><span>💰 社群唤醒成单</span></a></li>
+      <li class="pdw-nav__item"><a class="pdw-nav-link" href="opportunity-assign.html" data-nav-key="opportunity-assign"><svg class="pdw-nav-link__icon" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg><span>🎯 商机分配</span></a></li>
+      <li class="pdw-nav__item"><a class="pdw-nav-link" href="advisor-ranking.html" data-nav-key="advisor-ranking"><svg class="pdw-nav-link__icon" viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"/></svg><span>🏆 顾问转化排名</span></a></li>
+      <li class="pdw-nav__item"><a class="pdw-nav-link" href="content-library.html" data-nav-key="content-library"><svg class="pdw-nav-link__icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg><span>🖼️ 社群图文素材库</span></a></li>
+      <li class="pdw-nav__item"><a class="pdw-nav-link" href="content-calendar.html" data-nav-key="content-calendar"><svg class="pdw-nav-link__icon" viewBox="0 0 24 24"><path d="M8 2v4"/><path d="M16 2v4"/><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg><span>📅 社群日历</span></a></li>
+      <li class="pdw-nav__item"><a class="pdw-nav-link" href="community-activity.html" data-nav-key="community-activity"><svg class="pdw-nav-link__icon" viewBox="0 0 24 24"><path d="M5.8 11.3 2 22l10.7-3.8"/><path d="M18 13l4-4"/><path d="M15 10l5-5"/><path d="M12 13l-2-2"/><path d="m13 14-2-2"/><path d="m12 21-5-5"/><path d="m8 12-6 6"/><path d="M4 4h.01"/><path d="M22 4h.01"/><path d="M11 10.5h.01"/><path d="M11 14.5h.01"/><path d="M16 7h.01"/></svg><span>🎉 社群活动</span></a></li>
+      <li class="pdw-nav__item"><a class="pdw-nav-link" href="points.html" data-nav-key="points"><svg class="pdw-nav-link__icon" viewBox="0 0 24 24"><circle cx="8" cy="8" r="6"/><path d="M18.09 10.37A6 6 0 1 1 10.34 18"/><path d="M7 6h1v4"/></svg><span>⭐ 积分激励</span></a></li>
+      <li class="pdw-nav__item"><a class="pdw-nav-link" href="todo.html" data-nav-key="todo"><svg class="pdw-nav-link__icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>✅ 个人待办</span></a></li>
+      <li class="pdw-nav__item"><a class="pdw-nav-link" href="settings.html" data-nav-key="settings"><svg class="pdw-nav-link__icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg><span>⚙️ 设置中心</span></a></li>
+      <li class="pdw-nav__item"><a class="pdw-nav-link" href="profile.html" data-nav-key="profile"><svg class="pdw-nav-link__icon" viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>👤 我的</span></a></li>
+    </ul>
+  </nav>
+</aside>
+
+<header class="pdw-topbar" id="pdw-topbar">
+  <div style="display:flex;align-items:center;">
+    <button class="pdw-btn--icon pdw-menu-toggle" type="button" id="pdw-menu-toggle" aria-label="打开菜单">
+      <svg class="pdw-nav-link__icon" viewBox="0 0 24 24"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
+    </button>
+    <div class="pdw-page-title">设置中心</div>
+  </div>
+  <div class="pdw-topbar-center">
+    <div class="pdw-clock-widget" aria-label="当前时间">
+      <div class="pdw-clock-widget__time" id="pdw-clock-time">--:--</div>
+      <div class="pdw-clock-widget__date">
+        <span id="pdw-clock-date">--月--日</span>
+        <span id="pdw-clock-week">星期-</span>
+      </div>
+    </div>
+    <div class="pdw-weather-widget" aria-label="本地天气">
+      <svg class="pdw-weather-widget__icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      <span id="pdw-weather-text">正在获取天气...</span>
+    </div>
+  </div>
+  <div class="pdw-userbar">
+    <button class="pdw-btn--icon" type="button" id="pdw-theme-toggle" aria-label="切换深浅主题">
+      <svg class="pdw-nav-link__icon" viewBox="0 0 24 24" id="pdw-theme-icon"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    </button>
+    <button class="pdw-btn--icon" type="button" aria-label="通知">
+      <svg class="pdw-nav-link__icon" viewBox="0 0 24 24"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+    </button>
+    <span class="pdw-avatar">雅文</span>
+    <span class="pdw-userbar__name">雅文</span>
+  </div>
+</header>
+
+<main class="pdw-main" id="pdw-main">
+  <div class="pdw-main__inner">
+    <section class="pdw-panel">
+      <div class="pdw-panel__title">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 8v8"/><path d="M8 12h8"/></svg>
+        主题与外观
+      </div>
+      <div class="pdw-setting-row">
+        <div>
+          <div class="pdw-setting-label">深色模式</div>
+          <div class="pdw-setting-desc">一键切换浅色 / 深色主题，自动适配所有模块</div>
+        </div>
+        <div class="pdw-switch" id="theme-switch"></div>
+      </div>
+      <div class="pdw-setting-row">
+        <div>
+          <div class="pdw-setting-label">背景壁纸</div>
+          <div class="pdw-setting-desc">选择内置壁纸或上传自定义图片作为工作台背景</div>
+        </div>
+      </div>
+      <div class="pdw-wallpaper-grid" id="wallpaper-grid" style="margin-top:10px;"></div>
+      <div style="margin-top:12px;">
+        <label class="pdw-btn pdw-btn--secondary" style="cursor:pointer;">
+          上传自定义壁纸
+          <input type="file" id="wallpaper-upload" accept="image/*" style="display:none;">
+        </label>
+      </div>
+    </section>
+
+    <section class="pdw-panel">
+      <div class="pdw-panel__title">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        数据安全
+      </div>
+      <div class="pdw-setting-row">
+        <div>
+          <div class="pdw-setting-label">访问密码</div>
+          <div class="pdw-setting-desc">开启后进入工作台需要输入密码，使用 SHA-256 加密存储</div>
+        </div>
+        <div class="pdw-switch" id="pwd-switch"></div>
+      </div>
+      <div id="pwd-panel" style="display:none;margin-top:12px;">
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end;">
+          <div style="flex:1;min-width:200px;">
+            <label style="font-size:var(--pdw-text-xs);color:var(--pdw-slate-500);">密码</label>
+            <input class="pdw-input" type="password" id="pwd-input" placeholder="设置密码" />
+          </div>
+          <div style="flex:1;min-width:200px;">
+            <label style="font-size:var(--pdw-text-xs);color:var(--pdw-slate-500);">确认密码</label>
+            <input class="pdw-input" type="password" id="pwd-confirm" placeholder="再次输入" />
+          </div>
+          <button class="pdw-btn" id="pwd-save">保存密码</button>
+          <button class="pdw-btn pdw-btn--secondary" id="pwd-change" style="display:none;">修改密码</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="pdw-panel">
+      <div class="pdw-panel__title">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+        备份与同步
+      </div>
+      <div class="pdw-setting-row">
+        <div>
+          <div class="pdw-setting-label">导出 JSON 备份</div>
+          <div class="pdw-setting-desc">一键导出所有本地数据到文件</div>
+        </div>
+        <button class="pdw-btn pdw-btn--secondary" id="btn-export">导出备份</button>
+      </div>
+      <div class="pdw-setting-row">
+        <div>
+          <div class="pdw-setting-label">导入 JSON 备份</div>
+          <div class="pdw-setting-desc">从备份文件恢复数据</div>
+        </div>
+        <label class="pdw-btn pdw-btn--secondary" style="cursor:pointer;">
+          导入备份
+          <input type="file" id="btn-import" accept=".json" style="display:none;">
+        </label>
+      </div>
+      <div class="pdw-setting-row">
+        <div>
+          <div class="pdw-setting-label">云端接口同步</div>
+          <div class="pdw-setting-desc" id="sync-status">上次同步：未同步</div>
+        </div>
+        <button class="pdw-btn" id="btn-sync">立即同步</button>
+      </div>
+    </section>
+
+    <section class="pdw-panel">
+      <div class="pdw-panel__title">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+        通知
+      </div>
+      <div class="pdw-setting-row">
+        <div>
+          <div class="pdw-setting-label">系统通知</div>
+          <div class="pdw-setting-desc">开启后到期日、生日等关键事件会推送提醒</div>
+        </div>
+        <button class="pdw-btn pdw-btn--secondary" id="btn-notify">开启通知</button>
+      </div>
+    </section>
+
+    <section class="pdw-panel">
+      <div class="pdw-panel__title">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+        危险操作
+      </div>
+      <div class="pdw-setting-row">
+        <div>
+          <div class="pdw-setting-label">清空所有数据</div>
+          <div class="pdw-setting-desc">删除本地存储的所有工作台数据，不可恢复</div>
+        </div>
+        <button class="pdw-btn pdw-btn--danger" id="btn-clear">清空数据</button>
+      </div>
+    </section>
+  </div>
+</main>
+
+<div class="pdw-toast" id="pdw-toast"></div>
+
+<script>
+(function(){
+  const WALLPAPERS = [
+    { id:'grad1', style:'linear-gradient(135deg,#f0f9ff 0%,#f0fdf9 100%)' },
+    { id:'grad2', style:'linear-gradient(135deg,#e0f2fe 0%,#dcfce7 100%)' },
+    { id:'grad3', style:'linear-gradient(135deg,#ccfbf1 0%,#ecfccb 100%)' },
+    { id:'grad4', style:'linear-gradient(135deg,#dbeafe 0%,#d1fae5 100%)' },
+    { id:'grad5', style:'linear-gradient(135deg,#fae8ff 0%,#e0f2fe 100%)' },
+    { id:'grad6', style:'linear-gradient(135deg,#fef3c7 0%,#d1fae5 100%)' },
+    { id:'grad7', style:'linear-gradient(135deg,#fee2e2 0%,#ffedd5 100%)' }
+  ];
+
+  function toast(msg) {
+    const el = document.getElementById('pdw-toast');
+    el.textContent = msg;
+    el.classList.add('is-show');
+    setTimeout(() => el.classList.remove('is-show'), 2400);
+  }
+
+  async function sha256(text) {
+    const buf = new TextEncoder().encode(text);
+    const hash = await crypto.subtle.digest('SHA-256', buf);
+    return Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2,'0')).join('');
+  }
+
+  function applyWallpaper(id, custom) {
+    let bg = '';
+    if (custom) {
+      bg = 'url(' + custom + ')';
+      document.documentElement.style.setProperty('--pdw-background', bg + ' no-repeat center/cover fixed');
+    } else {
+      const wp = WALLPAPERS.find(w => w.id === id) || WALLPAPERS[0];
+      document.documentElement.style.setProperty('--pdw-background', wp.style);
+    }
+    localStorage.setItem('pdw-wallpaper-id', id);
+    if (custom) localStorage.setItem('pdw-wallpaper-custom', custom);
+    else localStorage.removeItem('pdw-wallpaper-custom');
+    renderWallpapers();
+  }
+
+  function renderWallpapers() {
+    const current = localStorage.getItem('pdw-wallpaper-id') || 'grad1';
+    const grid = document.getElementById('wallpaper-grid');
+    grid.innerHTML = WALLPAPERS.map(w => `<div class="pdw-wallpaper ${w.id===current?'is-active':''}" data-id="${w.id}" style="background:${w.style};"></div>`).join('');
+  }
+
+  function initThemeSwitch() {
+    const sw = document.getElementById('theme-switch');
+    const current = document.documentElement.getAttribute('data-theme') || 'light';
+    sw.classList.toggle('is-on', current === 'dark');
+    sw.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme') || 'light';
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('pdw-theme', next);
+      sw.classList.toggle('is-on', next === 'dark');
+      updateThemeIcon(next);
+    });
+  }
+
+  function initPwd() {
+    const sw = document.getElementById('pwd-switch');
+    const panel = document.getElementById('pwd-panel');
+    const enabled = !!localStorage.getItem('pdw-pwd-hash');
+    sw.classList.toggle('is-on', enabled);
+    panel.style.display = enabled ? 'block' : 'none';
+    document.getElementById('pwd-save').style.display = enabled ? 'none' : 'inline-flex';
+    document.getElementById('pwd-change').style.display = enabled ? 'inline-flex' : 'none';
+
+    sw.addEventListener('click', async () => {
+      const enabled = !!localStorage.getItem('pdw-pwd-hash');
+      if (enabled) {
+        localStorage.removeItem('pdw-pwd-hash');
+        sw.classList.remove('is-on');
+        panel.style.display = 'none';
+        toast('密码已关闭');
+      } else {
+        panel.style.display = 'block';
+        document.getElementById('pwd-save').style.display = 'inline-flex';
+        document.getElementById('pwd-change').style.display = 'none';
+      }
+    });
+
+    document.getElementById('pwd-save').addEventListener('click', async () => {
+      const a = document.getElementById('pwd-input').value;
+      const b = document.getElementById('pwd-confirm').value;
+      if (!a || a !== b) { toast('两次输入不一致'); return; }
+      localStorage.setItem('pdw-pwd-hash', await sha256(a));
+      toast('密码已开启');
+      document.getElementById('pwd-save').style.display = 'none';
+      document.getElementById('pwd-change').style.display = 'inline-flex';
+      document.getElementById('pwd-switch').classList.add('is-on');
+    });
+
+    document.getElementById('pwd-change').addEventListener('click', async () => {
+      document.getElementById('pwd-save').style.display = 'inline-flex';
+      document.getElementById('pwd-change').style.display = 'none';
+      document.getElementById('pwd-input').focus();
+    });
+  }
+
+  function exportBackup() {
+    const data = {};
+    for (let i = 0; i < localStorage.length; i++) {
+      const k = localStorage.key(i);
+      data[k] = localStorage.getItem(k);
+    }
+    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = `pdw-backup-${new Date().toISOString().slice(0,10)}.json`;
+    a.click();
+    toast('备份已导出');
+  }
+
+  function importBackup(file) {
+    const reader = new FileReader();
+    reader.onload = () => {
+      try {
+        const data = JSON.parse(reader.result);
+        Object.keys(data).forEach(k => localStorage.setItem(k, data[k]));
+        toast('备份已导入，刷新后生效');
+      } catch (e) { toast('文件格式错误'); }
+    };
+    reader.readAsText(file);
+  }
+
+  function syncCloud() {
+    const url = localStorage.getItem('pdw-sync-url');
+    if (!url) {
+      const input = prompt('请输入云端同步接口地址（示例：https://api.example.com/pdw/sync）：');
+      if (!input) return;
+      localStorage.setItem('pdw-sync-url', input);
+    }
+    setTimeout(() => {
+      localStorage.setItem('pdw-sync-at', new Date().toISOString());
+      document.getElementById('sync-status').textContent = '上次同步：' + new Date().toLocaleString();
+      toast('同步完成');
+    }, 800);
+  }
+
+  function requestNotify() {
+    if (!('Notification' in window)) { toast('当前环境不支持通知'); return; }
+    Notification.requestPermission().then(p => {
+      localStorage.setItem('pdw-notify', p);
+      toast(p === 'granted' ? '通知已开启' : '通知权限被拒绝');
+    });
+  }
+
+  function clearAll() {
+    if (!confirm('确定要清空所有数据吗？此操作不可恢复。')) return;
+    localStorage.clear();
+    toast('数据已清空');
+    setTimeout(() => location.reload(), 1000);
+  }
+
+  function updateThemeIcon(theme) {
+    const icon = document.getElementById('pdw-theme-icon');
+    if (!icon) return;
+    icon.innerHTML = theme === 'dark'
+      ? '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />'
+      : '<circle cx="12" cy="12" r="5" /><line x1="12" y1="1" x2="12" y2="3" /><line x1="12" y1="21" x2="12" y2="23" /><line x1="4.22" y1="4.22" x2="5.64" y2="5.64" /><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" /><line x1="1" y1="12" x2="3" y2="12" /><line x1="21" y1="12" x2="23" y2="12" /><line x1="4.22" y1="19.78" x2="5.64" y2="18.36" /><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />';
+  }
+
+  // Event listeners
+  document.getElementById('wallpaper-grid').addEventListener('click', e => {
+    if (e.target.classList.contains('pdw-wallpaper')) applyWallpaper(e.target.dataset.id);
+  });
+  document.getElementById('wallpaper-upload').addEventListener('change', e => {
+    const file = e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = () => applyWallpaper('custom', reader.result);
+    reader.readAsDataURL(file);
+  });
+  document.getElementById('btn-export').addEventListener('click', exportBackup);
+  document.getElementById('btn-import').addEventListener('change', e => { if (e.target.files[0]) importBackup(e.target.files[0]); });
+  document.getElementById('btn-sync').addEventListener('click', syncCloud);
+  document.getElementById('btn-notify').addEventListener('click', requestNotify);
+  document.getElementById('btn-clear').addEventListener('click', clearAll);
+
+  // Theme / menu / clock shared logic
+  function initTheme() {
+    const saved = localStorage.getItem('pdw-theme');
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const theme = saved || (prefersDark ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', theme);
+    updateThemeIcon(theme);
+  }
+  document.getElementById('pdw-theme-toggle').addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-theme') || 'light';
+    const next = current === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('pdw-theme', next);
+    updateThemeIcon(next);
+    document.getElementById('theme-switch').classList.toggle('is-on', next === 'dark');
+  });
+  function updateClock() {
+    const now = new Date();
+    const weekDays = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];
+    const t = document.getElementById('pdw-clock-time'); if (t) t.textContent = String(now.getHours()).padStart(2,'0') + ':' + String(now.getMinutes()).padStart(2,'0');
+    const d = document.getElementById('pdw-clock-date'); if (d) d.textContent = (now.getMonth()+1) + '月' + now.getDate() + '日';
+    const w = document.getElementById('pdw-clock-week'); if (w) w.textContent = weekDays[now.getDay()];
+  }
+  function updateWeather() {
+    const el = document.getElementById('pdw-weather-text');
+    if (!el) return;
+    const cached = localStorage.getItem('pdw-weather');
+    el.textContent = cached || '杭州 24°C 晴';
+  }
+  document.getElementById('pdw-menu-toggle').addEventListener('click', () => document.getElementById('pdw-sidebar').classList.toggle('is-open'));
+
+  // Restore wallpaper
+  const savedWp = localStorage.getItem('pdw-wallpaper-id');
+  const savedCustom = localStorage.getItem('pdw-wallpaper-custom');
+  if (savedWp === 'custom' && savedCustom) applyWallpaper('custom', savedCustom);
+  else if (savedWp) applyWallpaper(savedWp);
+
+  // Init
+  initTheme();
+  renderWallpapers();
+  initThemeSwitch();
+  initPwd();
+  updateClock();
+  updateWeather();
+  setInterval(updateClock, 1000);
+  const syncAt = localStorage.getItem('pdw-sync-at');
+  if (syncAt) document.getElementById('sync-status').textContent = '上次同步：' + new Date(syncAt).toLocaleString();
+})();
+</script>
+
+    <style>
+      .pdw-panel {
+        background: var(--pdw-card);
+        border: 1px solid var(--pdw-border);
+        border-radius: var(--pdw-radius-large);
+        box-shadow: var(--pdw-shadow-md);
+        padding: 22px;
+        margin-bottom: 18px;
+      }
+      .pdw-panel__title {
+        font-size: var(--pdw-text-lg);
+        font-weight: 800;
+        color: var(--pdw-slate-800);
+        margin-bottom: 18px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      [data-theme="dark"] .pdw-panel__title { color: var(--pdw-slate-100); }
+      .pdw-setting-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 14px 0;
+        border-bottom: 1px solid var(--pdw-border);
+      }
+      .pdw-setting-row:last-child { border-bottom: none; }
+      .pdw-setting-label { font-weight: 600; color: var(--pdw-slate-800); }
+      [data-theme="dark"] .pdw-setting-label { color: var(--pdw-slate-100); }
+      .pdw-setting-desc { font-size: var(--pdw-text-xs); color: var(--pdw-slate-500); margin-top: 3px; }
+      .pdw-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        height: 44px;
+        padding: 0 18px;
+        border-radius: var(--pdw-radius-medium);
+        background: var(--pdw-primary);
+        color: var(--pdw-primary-foreground);
+        border: none;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all var(--pdw-transition-fast);
+        min-width: 44px;
+      }
+      .pdw-btn:hover { transform: scale(1.04); box-shadow: var(--pdw-shadow-md); }
+      .pdw-btn--secondary { background: var(--pdw-muted); color: var(--pdw-slate-700); }
+      .pdw-btn--danger { background: var(--state-error); }
+      .pdw-input {
+        height: 44px;
+        padding: 0 14px;
+        border: 1px solid var(--pdw-border);
+        border-radius: var(--pdw-radius-medium);
+        background: var(--pdw-card);
+        color: var(--pdw-foreground);
+        font-size: var(--pdw-text-base);
+        width: 100%;
+      }
+      .pdw-input:focus { outline: none; border-color: var(--pdw-primary); box-shadow: 0 0 0 3px var(--pdw-primary-100); }
+      .pdw-wallpaper-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+        gap: 12px;
+      }
+      .pdw-wallpaper {
+        aspect-ratio: 16/10;
+        border-radius: var(--pdw-radius-medium);
+        border: 2px solid transparent;
+        cursor: pointer;
+        background-size: cover;
+        background-position: center;
+        transition: all var(--pdw-transition-fast);
+      }
+      .pdw-wallpaper:hover { transform: scale(1.04); }
+      .pdw-wallpaper.is-active { border-color: var(--pdw-primary); }
+      .pdw-toast {
+        position: fixed;
+        bottom: 24px;
+        left: 50%;
+        transform: translateX(-50%) translateY(100px);
+        background: var(--pdw-slate-800);
+        color: var(--pdw-popover);
+        padding: 12px 20px;
+        border-radius: var(--pdw-radius-large);
+        box-shadow: var(--pdw-shadow-lg);
+        opacity: 0;
+        transition: all var(--pdw-transition-base);
+        z-index: 300;
+      }
+      .pdw-toast.is-show { transform: translateX(-50%) translateY(0); opacity: 1; }
+      .pdw-switch {
+        position: relative;
+        width: 48px;
+        height: 26px;
+        background: var(--pdw-slate-300);
+        border-radius: 13px;
+        cursor: pointer;
+        transition: background var(--pdw-transition-fast);
+      }
+      .pdw-switch.is-on { background: var(--pdw-primary); }
+      .pdw-switch::after {
+        content: '';
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        width: 22px;
+        height: 22px;
+        background: var(--pdw-popover);
+        border-radius: 50%;
+        transition: transform var(--pdw-transition-fast);
+      }
+      .pdw-switch.is-on::after { transform: translateX(22px); }
+    </style>
+</body>
+</html>

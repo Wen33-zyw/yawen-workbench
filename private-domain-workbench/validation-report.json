@@ -1,0 +1,102 @@
+{
+  "success": true,
+  "outcome": "passed",
+  "repairable": true,
+  "terminalViolations": [],
+  "terminalBlockingSummary": null,
+  "skillProvenance": {
+    "name": "solo-design",
+    "version": null,
+    "version_source": "unknown",
+    "runtime_skill_dir": null,
+    "recorded_at": null,
+    "expected_version": "2026.08.06.19.15.08",
+    "status": "observed_unknown",
+    "read_status": "missing"
+  },
+  "operatingMode": "free-explore",
+  "renderBlockingErrorCount": 0,
+  "softWarningCount": 0,
+  "renderBlockingErrors": [],
+  "errorSignatures": [],
+  "softWarnings": [],
+  "repairPlanHints": [],
+  "repairActionTable": [],
+  "errorCount": 0,
+  "warningCount": 0,
+  "errors": [],
+  "warnings": [],
+  "validationRunDisciplineStatus": {
+    "declared": true,
+    "restoreMode": false,
+    "maxFullValidationRuns": null,
+    "validationHistoryCount": 0,
+    "repairLedgerCount": 0,
+    "softWarningsTriggerRepair": null,
+    "terminalState": null,
+    "nextAction": null,
+    "violations": [],
+    "success": true
+  },
+  "terminalState": null,
+  "nextCheck": {
+    "type": "finish-readiness",
+    "command": "node '/data/user/builtin/design/default/skills/solo-design/shared-runtime/deterministic-tooling/validate-finish-readiness.mjs' '/workspace/private-domain-workbench' --check=all",
+    "fullValidationAllowed": false,
+    "reason": "workspace validation passed; run complete finish readiness before final delivery"
+  },
+  "repairBatch": [],
+  "repairContextPacket": {
+    "schema_version": "1.0",
+    "purpose": "small-context repair packet; read this before full validation-report.json",
+    "success": true,
+    "terminalState": null,
+    "skillProvenance": {
+      "name": "solo-design",
+      "version": null,
+      "version_source": "unknown",
+      "runtime_skill_dir": null,
+      "recorded_at": null,
+      "expected_version": "2026.08.06.19.15.08",
+      "status": "observed_unknown",
+      "read_status": "missing"
+    },
+    "renderBlockingErrorCount": 0,
+    "softWarningCount": 0,
+    "renderBlockingErrors": [],
+    "repairActionTable": [],
+    "nextCheck": {
+      "type": "finish-readiness",
+      "command": "node '/data/user/builtin/design/default/skills/solo-design/shared-runtime/deterministic-tooling/validate-finish-readiness.mjs' '/workspace/private-domain-workbench' --check=all",
+      "fullValidationAllowed": false,
+      "reason": "workspace validation passed; run complete finish readiness before final delivery"
+    },
+    "forbidden": [
+      "do not read validator source",
+      "do not rerun full validation when nextCheck.fullValidationAllowed=false",
+      "do not start preview/browser unless user explicitly asks",
+      "do not hand-edit repair ledger fields"
+    ]
+  },
+  "projectFileHashes": {
+    "private-domain-workbench.design": "f88eedb3fa8e8987cb6cdbdee6dc443deaf53f121c80ce26840f4b4c2698d6a5",
+    "colors_and_type.css": "eb00a2c8fa76ba38440d4dc72b9270308093c7af061344eb81209d7cd5f07d08",
+    "runtime-orchestration-summary.json": "086ac512bfadf10a57eebbe3650da843399f70ad1abb230a2d106e16f149eec9",
+    "pages/advisor-ranking.html": "603d8500e209b553eca62f1da59201247b97409c4389df811d41c485dffc0d52",
+    "pages/community-activity.html": "8250f6ebb7251cd86397b635c925518fe816e8b8a4e032baa26d20ba0c3e8816",
+    "pages/content-calendar.html": "82a68b000e3b80871e3822dd28460dd1613f34f5b1a3d627cd6fa482bb60f378",
+    "pages/content-library.html": "0308937fc5bbefbef232298327d6c1b3961662233a270d46f5e1f6f15c203b15",
+    "pages/daily-opportunity.html": "e19c6b289fdf31bbeafbacd69693805bb8433d57e2540ce7e26bdaae2d7a2a1a",
+    "pages/index.html": "a01f0f8ebb9eb157f87e20cb80969a96a62fd3f02fb16edb789238876b5c5110",
+    "pages/opportunity-assign.html": "e435a229a5ac6406dd2253a9b3e2fc03a29db836eee0f5df0d43754b375fd2ec",
+    "pages/points.html": "aa143b18d06732c560a9d6793086f34858b6f99fc1744f7a4ecd17d6790836c8",
+    "pages/profile.html": "fba0a07a5192405e93526f1554702c19cde4becee6eae1b5365774691c6dc1db",
+    "pages/settings.html": "66690f08be05c57543935dc31fa9bbec2c1cce4019762e69abf12a43830666e7",
+    "pages/todo.html": "0dbb7ed834eab5aa15347aa272fc847b8a94b0bfcc062d99dc0cd0820d570196",
+    "pages/weekly-deals.html": "54161b96c286098dc0a5c69ccbc52f6716c708cdfdb3d6d529448e1ff39de1f8"
+  },
+  "designDir": "/workspace/private-domain-workbench",
+  "expectedPages": null,
+  "requireInteractions": null,
+  "checkedAt": "2026-08-18T06:11:31.194Z"
+}

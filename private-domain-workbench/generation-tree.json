@@ -1,0 +1,124 @@
+{
+  "root": {
+    "nodeId": "gen-project-shell",
+    "kind": "project-shell",
+    "title": "Shared dashboard shell",
+    "output": "partials/project-shell.html",
+    "sharedRegions": ["sidebar", "topbar", "content-frame", "brand-css"],
+    "privateRegions": [],
+    "mutableSlots": ["pageTitle", "activeNavItem", "mainContent"],
+    "status": "generated",
+    "children": [
+      {
+        "nodeId": "gen-page-index",
+        "kind": "page-leaf",
+        "pageIds": ["page-index"],
+        "title": "工作台首页",
+        "output": "pages/index.html",
+        "sharedRegions": ["sidebar", "topbar", "content-frame"],
+        "privateRegions": ["dashboard-content"],
+        "mutableSlots": ["pageTitle:index", "activeNavItem:index"],
+        "status": "generated"
+      },
+      {
+        "nodeId": "gen-page-daily-opportunity",
+        "kind": "page-leaf",
+        "pageIds": ["page-daily-opportunity"],
+        "title": "每日商机数据",
+        "output": "pages/daily-opportunity.html",
+        "sharedRegions": ["sidebar", "topbar", "content-frame"],
+        "privateRegions": ["upload-area", "metrics", "data-table"],
+        "mutableSlots": ["pageTitle:daily-opportunity", "activeNavItem:daily-opportunity"],
+        "status": "planned"
+      },
+      {
+        "nodeId": "gen-page-weekly-deals",
+        "kind": "page-leaf",
+        "pageIds": ["page-weekly-deals"],
+        "title": "社群唤醒成单",
+        "output": "pages/weekly-deals.html",
+        "sharedRegions": ["sidebar", "topbar", "content-frame"],
+        "privateRegions": ["dual-upload", "match-results"],
+        "mutableSlots": ["pageTitle:weekly-deals", "activeNavItem:weekly-deals"],
+        "status": "planned"
+      },
+      {
+        "nodeId": "gen-page-opportunity-assign",
+        "kind": "page-leaf",
+        "pageIds": ["page-opportunity-assign"],
+        "title": "商机分配",
+        "output": "pages/opportunity-assign.html",
+        "sharedRegions": ["sidebar", "topbar", "content-frame"],
+        "privateRegions": ["upload", "distribution-list"],
+        "mutableSlots": ["pageTitle:opportunity-assign", "activeNavItem:opportunity-assign"],
+        "status": "planned"
+      },
+      {
+        "nodeId": "gen-page-advisor-ranking",
+        "kind": "page-leaf",
+        "pageIds": ["page-advisor-ranking"],
+        "title": "顾问转化排名",
+        "output": "pages/advisor-ranking.html",
+        "sharedRegions": ["sidebar", "topbar", "content-frame"],
+        "privateRegions": ["ranking-table", "filters"],
+        "mutableSlots": ["pageTitle:advisor-ranking", "activeNavItem:advisor-ranking"],
+        "status": "planned"
+      },
+      {
+        "nodeId": "gen-page-content-library",
+        "kind": "page-leaf",
+        "pageIds": ["page-content-library"],
+        "title": "社群图文素材库",
+        "output": "pages/content-library.html",
+        "sharedRegions": ["sidebar", "topbar", "content-frame"],
+        "privateRegions": ["filters", "asset-grid", "paste-area"],
+        "mutableSlots": ["pageTitle:content-library", "activeNavItem:content-library"],
+        "status": "planned"
+      },
+      {
+        "nodeId": "gen-page-content-calendar",
+        "kind": "page-leaf",
+        "pageIds": ["page-content-calendar"],
+        "title": "社群日历",
+        "output": "pages/content-calendar.html",
+        "sharedRegions": ["sidebar", "topbar", "content-frame"],
+        "privateRegions": ["week-calendar", "day-slots"],
+        "mutableSlots": ["pageTitle:content-calendar", "activeNavItem:content-calendar"],
+        "status": "planned"
+      },
+      {
+        "nodeId": "gen-page-community-activity",
+        "kind": "page-leaf",
+        "pageIds": ["page-community-activity"],
+        "title": "社群活动",
+        "output": "pages/community-activity.html",
+        "sharedRegions": ["sidebar", "topbar", "content-frame"],
+        "privateRegions": ["activity-list", "tab-panels"],
+        "mutableSlots": ["pageTitle:community-activity", "activeNavItem:community-activity"],
+        "status": "planned"
+      },
+      {
+        "nodeId": "gen-page-points",
+        "kind": "page-leaf",
+        "pageIds": ["page-points"],
+        "title": "积分激励",
+        "output": "pages/points.html",
+        "sharedRegions": ["sidebar", "topbar", "content-frame"],
+        "privateRegions": ["leaderboard", "breakdown", "redemption"],
+        "mutableSlots": ["pageTitle:points", "activeNavItem:points"],
+        "status": "planned"
+      },
+      {
+        "nodeId": "gen-page-profile",
+        "kind": "page-leaf",
+        "pageIds": ["page-profile"],
+        "title": "我的",
+        "output": "pages/profile.html",
+        "sharedRegions": ["sidebar", "topbar", "content-frame"],
+        "privateRegions": ["settings", "reports", "suggestions"],
+        "mutableSlots": ["pageTitle:profile", "activeNavItem:profile"],
+        "status": "planned"
+      }
+    ]
+  }
+}
